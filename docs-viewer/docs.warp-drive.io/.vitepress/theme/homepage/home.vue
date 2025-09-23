@@ -8,11 +8,11 @@ import Hero from "./hero.vue";
 import { onMounted, onUnmounted } from "vue";
 
 onMounted(() => {
-  document.body.classList.add("homepage");
+  document.body.classList.add("homepage", "dark");
 });
 
 onUnmounted(() => {
-  document.body.classList.remove("homepage");
+  document.body.classList.remove("homepage", "dark");
 });
 </script>
 
