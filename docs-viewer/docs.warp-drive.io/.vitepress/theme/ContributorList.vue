@@ -15,13 +15,16 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+interface Props {
   contributors: {
-    type: Array,
-    required: true,
-  },
-});
+    name: string;
+    avatar: string;
+    githubLink: string;
+  }[];
+}
+
+const props = defineProps<Props>();
 </script>
 
 <style scoped>

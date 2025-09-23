@@ -7,6 +7,9 @@ export interface CoreTeamMember {
   links: { icon: string; link: string }[];
 }
 
+declare const data: CoreTeamMember[];
+export { data };
+
 export default {
   load() {
     return [

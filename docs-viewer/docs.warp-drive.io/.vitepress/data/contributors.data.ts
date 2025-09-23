@@ -75,6 +75,9 @@ async function load() {
     }));
 }
 
+declare const data: Contributor[];
+export { data };
+
 export default {
   load,
 };

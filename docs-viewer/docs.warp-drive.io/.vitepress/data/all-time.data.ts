@@ -1,7 +1,16 @@
 import { Contributor, getFromCache, default as loadAll, saveToCache } from './contributors.data';
-import { CoreTeamMember, default as loadCore } from './core.data';
+import { default as loadCore } from './core.data';
 
 // https://api.github.com/users/
+
+interface Data {
+  top12: Contributor[];
+  decoratedTop12: TopContributor[];
+  profiles: Record<string, any>;
+}
+
+declare const data: Data;
+export { data };
 
 export default {
   async load() {

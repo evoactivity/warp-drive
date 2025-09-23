@@ -68,13 +68,13 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
@@ -180,6 +180,9 @@ importers:
       front-matter:
         specifier: ^4.0.2
         version: 4.0.2
+      twgl.js:
+        specifier: ^7.0.0
+        version: 7.0.0
       typedoc:
         specifier: ^0.28.10
         version: 0.28.10(typescript@5.9.2)
@@ -1564,13 +1567,13 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.4(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(e4825fc0d38b869953debfa829dfc207)
+        version: 2.0.0-alpha.3(6a63a32cb2df9773be250fd20b6aed58)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(16cd01190347de5f081b75edf0eb3dba)
+        version: 2.0.0-alpha.3(f339ec2f9cb8537c4b9e7741352ae33e)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
@@ -2281,13 +2284,13 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
@@ -2428,19 +2431,19 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
       '@glint/tsserver-plugin':
         specifier: alpha
-        version: 2.0.0-alpha.6
+        version: 2.0.0-alpha.7
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.28.3)(rollup@4.48.1)
@@ -2632,19 +2635,19 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
       '@glint/tsserver-plugin':
         specifier: alpha
-        version: 2.0.0-alpha.6
+        version: 2.0.0-alpha.7
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.28.3)(rollup@4.48.1)
@@ -3037,19 +3040,19 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
       '@glint/tsserver-plugin':
         specifier: alpha
-        version: 2.0.0-alpha.6
+        version: 2.0.0-alpha.7
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.28.3)(rollup@4.48.1)
@@ -3175,13 +3178,13 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(0b30c95d0b44dd8a3af202815f15f908)
+        version: 2.0.0-alpha.3(6a63a32cb2df9773be250fd20b6aed58)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(f11f8dfbb24869cd44328d60b5500bda)
+        version: 2.0.0-alpha.3(f339ec2f9cb8537c4b9e7741352ae33e)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
@@ -3915,13 +3918,13 @@ importers:
         version: 2.0.0
       '@glint/core':
         specifier: alpha
-        version: 2.0.0-alpha.6(typescript@5.9.2)
+        version: 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/environment-ember-loose':
         specifier: alpha
-        version: 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
+        version: 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/environment-ember-template-imports':
         specifier: alpha
-        version: 2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)
+        version: 2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)
       '@glint/template':
         specifier: alpha
         version: 1.6.0-alpha.2
@@ -4368,6 +4371,60 @@ packages:
 
   '@asamuzakjp/css-color@3.1.7':
     resolution: {integrity: sha512-Ok5fYhtwdyJQmU1PpEv6Si7Y+A4cYb8yNM9oiIJC9TzXPMuN9fvdonKJqcnz9TbFqV6bQ8z0giRq0iaOpGZV2g==}
+
+  '@ast-grep/napi-darwin-arm64@0.28.1':
+    resolution: {integrity: sha512-RSon42R7fO7KQbUS1XaITiUQjzCELJjvhioNobDumnSUujnrPrUQ/W4rJm/yTacVQzf+0PhG5AfDHvcR3CeOrw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@ast-grep/napi-darwin-x64@0.28.1':
+    resolution: {integrity: sha512-akqXGA3smY+5lSdnbXw1RBETZvSQPHVvB1c7Vm10u9C7OnXCUI7NKxgY+hBNNThiq1XDSOBERAuDbJEYKdizfQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@ast-grep/napi-linux-arm64-gnu@0.28.1':
+    resolution: {integrity: sha512-VtatyjDc742sBz3wY2xRxGYjLFhHG4x/u7mqNGpEVPnF7K8Cgy09zQXZf5CaSzFRWAGE7p8th/uBvn/WfKteGg==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-arm64-musl@0.28.1':
+    resolution: {integrity: sha512-tWjlbyVcPQHngilsZSJDs074UK9VSbUfyqB5DpkgzWJAB6ANUnzu13McUkXLtsBgAcH09gAEJydxkkqUMUwh4Q==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-x64-gnu@0.28.1':
+    resolution: {integrity: sha512-tadcQ/Ne/k7YiOCZBVxDPYtGhtuLZ9bMrKfZVWZeNdsCSjR3UsvTK0Cx2hWDbTqhJ7v2rCdKAAevNDWbcSquBw==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-x64-musl@0.28.1':
+    resolution: {integrity: sha512-qHsWSBgz66H6co6bgCCUh8ebPH8QmS2RijSTJUG+q99Rey1AkAvyUzCKHd//6Cq7jB9oaqi0GLgOotXCuIJAQg==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@ast-grep/napi-win32-arm64-msvc@0.28.1':
+    resolution: {integrity: sha512-BSWh1RSDqqKZnt23JAU5TZn7NcfI+JADL/Q8bZT64ZYX4WyDYgaU0RnEraVo5PVmu50RD7b5MPvCNqUUDg4hJw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@ast-grep/napi-win32-ia32-msvc@0.28.1':
+    resolution: {integrity: sha512-o9qqy3Wr0Z6T3JYWiuQX/8MO+asHsr9QvzR0Muymf2dJrgx6HDQFKXTdywYviZCUuK20macfKczijik7TUy9Bw==}
+    engines: {node: '>= 10'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@ast-grep/napi-win32-x64-msvc@0.28.1':
+    resolution: {integrity: sha512-UJVucm6ksqB9dN0i9PvlOJL028gmNzkw21RFPDJ3yRBEfT4FOPTF/WMhvbpmLNFw/i1CeJ5/uNDFFxXFn+CUiA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
 
   '@ast-grep/napi@0.28.1':
     resolution: {integrity: sha512-0/+mAJaPj/qxkYStEIsrN4ibF/WTWgxAZC8kAo+b02IzP62qcWnyRJOiTvkPr5v00Fc6iXj4BIZOVQPjaM4MtQ==}
@@ -5732,14 +5789,8 @@ packages:
   '@glimmer/wire-format@0.94.8':
     resolution: {integrity: sha512-A+Cp5m6vZMAEu0Kg/YwU2dJZXyYxVJs2zI57d3CP6NctmX7FsT8WjViiRUmt5abVmMmRH5b8BUovqY6GSMAdrw==}
 
-  '@glint/core@2.0.0-alpha.4':
-    resolution: {integrity: sha512-tGQNKlwZ/1BhNnxP6No+yIxaff3ta7dh2gEaNFSYZMOA+hBldHeDzxUJH0w2QtbCy/6ZaM+Ujepvfp+mpiY+9A==}
-    hasBin: true
-    peerDependencies:
-      typescript: 5.9.2
-
-  '@glint/core@2.0.0-alpha.6':
-    resolution: {integrity: sha512-dvPO/T2pX5c8QvBarxP/BOd4QnXPqfkOfMrMFmNe78JGCU2fQvhyvc27w4R/t/HYVNoxmY38714hwUcDRURFXA==}
+  '@glint/core@2.0.0-alpha.7':
+    resolution: {integrity: sha512-dYIQHkCvSJ8JvR0lyiFF4xcjwxl5muvI5Q44Er2PQ2UoDMOYQhsc7sfLIuuN8ZwKHIVfC+cPK8EO9NhBhHcr7g==}
     hasBin: true
     peerDependencies:
       typescript: 5.9.2
@@ -5768,8 +5819,8 @@ packages:
   '@glint/template@1.6.0-alpha.2':
     resolution: {integrity: sha512-T1jnkJ4g9kj4CQFdax6/AE8rdd8S5+1/88l63w1xPjfSByhKt3ES6Noko3fPx9WhV7gZxalgg6sjBoZlhPZabg==}
 
-  '@glint/tsserver-plugin@2.0.0-alpha.6':
-    resolution: {integrity: sha512-aBnk/F5i8dahNqQBxgiIIRMqberkHEHYDAcT+Tk+Q+g0sCFR7meBOe2IXZCauPhUFCuEYQew+cSK8OPmB7LjMA==}
+  '@glint/tsserver-plugin@2.0.0-alpha.7':
+    resolution: {integrity: sha512-NpKYeN+q4PWb9uwQ0F2wDS1j1BJTl9bCsck+bCd2VPnlJ9XZyVhHMrvBphQTJxIY08rYqjzPe9Kaa64kq7jVEQ==}
 
   '@gwhitney/detect-indent@7.0.1':
     resolution: {integrity: sha512-7bQW+gkKa2kKZPeJf6+c6gFK9ARxQfn+FKy9ScTBppyKRWH2KzsmweXUoklqeEiHiNVWaeP5csIdsNq6w7QhzA==}
@@ -6872,34 +6923,25 @@ packages:
   '@vitest/utils@2.1.9':
     resolution: {integrity: sha512-v0psaMSkNJ3A2NMrUEHFRzJtDPFn+/VWZ5WxImB21T9fjucJRmS7xCS3ppEnARb9y11OAzaD+P2Ps+b+BGX5iQ==}
 
-  '@volar/kit@2.4.12':
-    resolution: {integrity: sha512-f9JE8oy9C2rBcCWxUYKUF23hOXz4mwgVXFjk7nHhxzplaoVjEOsKpBm8NI2nBH7Cwu8DRxDwBsbIxMl/8wlLxw==}
+  '@volar/kit@2.4.23':
+    resolution: {integrity: sha512-YuUIzo9zwC2IkN7FStIcVl1YS9w5vkSFEZfPvnu0IbIMaR9WHhc9ZxvlT+91vrcSoRY469H2jwbrGqpG7m1KaQ==}
     peerDependencies:
       typescript: 5.9.2
-
-  '@volar/language-core@2.4.12':
-    resolution: {integrity: sha512-RLrFdXEaQBWfSnYGVxvR2WrO6Bub0unkdHYIdC31HzIEqATIuuhRRzYu76iGPZ6OtA4Au1SnW0ZwIqPP217YhA==}
 
   '@volar/language-core@2.4.23':
     resolution: {integrity: sha512-hEEd5ET/oSmBC6pi1j6NaNYRWoAiDhINbT8rmwtINugR39loROSlufGdYMF9TaKGfz+ViGs1Idi3mAhnuPcoGQ==}
 
-  '@volar/language-server@2.4.12':
-    resolution: {integrity: sha512-KC0YqTXCZMaImMWyAKC+dLB2BXjfz80kqesJkV6oXxJsGEQPfmdqug299idwtrT6FVSmZ7q5UrPfvgKwA0S3JA==}
+  '@volar/language-server@2.4.23':
+    resolution: {integrity: sha512-k0iO+tybMGMMyrNdWOxgFkP0XJTdbH0w+WZlM54RzJU3WZSjHEupwL30klpM7ep4FO6qyQa03h+VcGHD4Q8gEg==}
 
-  '@volar/language-service@2.4.12':
-    resolution: {integrity: sha512-nifOPGYYPnCmxja6/ML/Gl2EgFkUdw4gLbYqbh8FjqX3gSpXSZl/0ebqORjKo1KW56YWHWRZd1jFutEtCiRYhA==}
-
-  '@volar/source-map@2.4.12':
-    resolution: {integrity: sha512-bUFIKvn2U0AWojOaqf63ER0N/iHIBYZPpNGogfLPQ68F5Eet6FnLlyho7BS0y2HJ1jFhSif7AcuTx1TqsCzRzw==}
+  '@volar/language-service@2.4.23':
+    resolution: {integrity: sha512-h5mU9DZ/6u3LCB9xomJtorNG6awBNnk9VuCioGsp6UtFiM8amvS5FcsaC3dabdL9zO0z+Gq9vIEMb/5u9K6jGQ==}
 
   '@volar/source-map@2.4.23':
     resolution: {integrity: sha512-Z1Uc8IB57Lm6k7q6KIDu/p+JWtf3xsXJqAX/5r18hYOTpJyBn0KXUR8oTJ4WFYOcDzWC9n3IflGgHowx6U6z9Q==}
 
-  '@volar/test-utils@2.4.12':
-    resolution: {integrity: sha512-8nIP0qGt1jANEuWY8Pm5658UsxbWl3p4N5XUNA/SZmuHvb9C3vygjLIWFHf0+Apbvy6yNwbKsRxawoYCoh+kkQ==}
-
-  '@volar/typescript@2.4.12':
-    resolution: {integrity: sha512-HJB73OTJDgPc80K30wxi3if4fSsZZAOScbj2fcicMuOPoOkcf9NNAINb33o+DzhBdF9xTKC1gnPmIRDous5S0g==}
+  '@volar/test-utils@2.4.23':
+    resolution: {integrity: sha512-ZF3Ejtv6mfwXHuR6aZGsh1ksvAdSZUfWKGacXa9S+Mnc3MpSPgxzHN3PwdXGt26HfRDWGuykJc8y6lVs20dDKw==}
 
   '@volar/typescript@2.4.23':
     resolution: {integrity: sha512-lAB5zJghWxVPqfcStmAP1ZqQacMpe90UrP5RJ3arDyrhy4aCUQqmxPPLB2PWDKugvylmO41ljK7vZ+t6INMTag==}
@@ -13341,6 +13383,9 @@ packages:
     resolution: {integrity: sha512-gxToHmi9oTBNB05UjUsrWf0OyN5ZXtD0apOarC1KIx232Vp3WimRNy3810QzeNSgyD5rsaIDXlxlbnOzlouo+w==}
     hasBin: true
 
+  twgl.js@7.0.0:
+    resolution: {integrity: sha512-9HHZ8emdZb2nKPU0FDIGDlkp6AD9rWFv7ThqdbmUqyBhD3WTQpLN+89w4B+YshGwD1fL6PMVpVKZqC0pikgmcA==}
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -14279,7 +14324,44 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.3
       lru-cache: 10.4.3
 
-  '@ast-grep/napi@0.28.1': {}
+  '@ast-grep/napi-darwin-arm64@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-darwin-x64@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-linux-arm64-gnu@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-linux-arm64-musl@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-linux-x64-gnu@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-linux-x64-musl@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-win32-arm64-msvc@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-win32-ia32-msvc@0.28.1':
+    optional: true
+
+  '@ast-grep/napi-win32-x64-msvc@0.28.1':
+    optional: true
+
+  '@ast-grep/napi@0.28.1':
+    optionalDependencies:
+      '@ast-grep/napi-darwin-arm64': 0.28.1
+      '@ast-grep/napi-darwin-x64': 0.28.1
+      '@ast-grep/napi-linux-arm64-gnu': 0.28.1
+      '@ast-grep/napi-linux-arm64-musl': 0.28.1
+      '@ast-grep/napi-linux-x64-gnu': 0.28.1
+      '@ast-grep/napi-linux-x64-musl': 0.28.1
+      '@ast-grep/napi-win32-arm64-msvc': 0.28.1
+      '@ast-grep/napi-win32-ia32-msvc': 0.28.1
+      '@ast-grep/napi-win32-x64-msvc': 0.28.1
 
   '@babel/cli@7.28.3(@babel/core@7.28.3)':
     dependencies:
@@ -16937,42 +17019,17 @@ snapshots:
     dependencies:
       '@glimmer/interfaces': 0.94.6
 
-  '@glint/core@2.0.0-alpha.4(typescript@5.9.2)':
-    dependencies:
-      '@glimmer/syntax': 0.94.9
-      '@volar/kit': 2.4.12(typescript@5.9.2)
-      '@volar/language-core': 2.4.12
-      '@volar/language-server': 2.4.12
-      '@volar/language-service': 2.4.12
-      '@volar/source-map': 2.4.12
-      '@volar/test-utils': 2.4.12
-      '@volar/typescript': 2.4.12
-      computeds: 0.0.1
-      escape-string-regexp: 4.0.0
-      semver: 7.7.2
-      silent-error: 1.1.1
-      typescript: 5.9.2
-      uuid: 8.3.2
-      volar-service-html: 0.0.64(@volar/language-service@2.4.12)
-      volar-service-typescript: 0.0.65(@volar/language-service@2.4.12)
-      vscode-languageserver-protocol: 3.17.5
-      vscode-languageserver-textdocument: 1.0.12
-      vscode-uri: 3.1.0
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - supports-color
-
-  '@glint/core@2.0.0-alpha.6(typescript@5.9.2)':
+  '@glint/core@2.0.0-alpha.7(typescript@5.9.2)':
     dependencies:
       '@glimmer/syntax': 0.94.9
       '@glint/template': 1.6.0-alpha.2
-      '@volar/kit': 2.4.12(typescript@5.9.2)
-      '@volar/language-core': 2.4.12
-      '@volar/language-server': 2.4.12
-      '@volar/language-service': 2.4.12
-      '@volar/source-map': 2.4.12
-      '@volar/test-utils': 2.4.12
-      '@volar/typescript': 2.4.12
+      '@volar/kit': 2.4.23(typescript@5.9.2)
+      '@volar/language-core': 2.4.23
+      '@volar/language-server': 2.4.23
+      '@volar/language-service': 2.4.23
+      '@volar/source-map': 2.4.23
+      '@volar/test-utils': 2.4.23
+      '@volar/typescript': 2.4.23
       computeds: 0.0.1
       content-tag: 3.1.3
       escape-string-regexp: 4.0.0
@@ -16980,8 +17037,8 @@ snapshots:
       silent-error: 1.1.1
       typescript: 5.9.2
       uuid: 8.3.2
-      volar-service-html: 0.0.64(@volar/language-service@2.4.12)
-      volar-service-typescript: 0.0.65(@volar/language-service@2.4.12)
+      volar-service-html: 0.0.64(@volar/language-service@2.4.23)
+      volar-service-typescript: 0.0.65(@volar/language-service@2.4.23)
       vscode-languageserver-protocol: 3.17.5
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.1.0
@@ -16989,56 +17046,41 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@glint/environment-ember-loose@2.0.0-alpha.3(0b30c95d0b44dd8a3af202815f15f908)':
+  '@glint/environment-ember-loose@2.0.0-alpha.3(6a63a32cb2df9773be250fd20b6aed58)':
     dependencies:
       '@glimmer/component': 2.0.0
-      '@glint/core': 2.0.0-alpha.6(typescript@5.9.2)
+      '@glint/core': 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/template': 1.6.0-alpha.2
     optionalDependencies:
       ember-cli-htmlbars: 6.3.0
 
-  '@glint/environment-ember-loose@2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)':
+  '@glint/environment-ember-loose@2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)':
     dependencies:
       '@glimmer/component': 2.0.0
-      '@glint/core': 2.0.0-alpha.6(typescript@5.9.2)
+      '@glint/core': 2.0.0-alpha.7(typescript@5.9.2)
       '@glint/template': 1.6.0-alpha.2
 
-  '@glint/environment-ember-loose@2.0.0-alpha.3(e4825fc0d38b869953debfa829dfc207)':
+  '@glint/environment-ember-template-imports@2.0.0-alpha.3(22e13270827e9bd419dd7b3bbbedeba2)':
     dependencies:
-      '@glimmer/component': 2.0.0
-      '@glint/core': 2.0.0-alpha.4(typescript@5.9.2)
-      '@glint/template': 1.6.0-alpha.2
-    optionalDependencies:
-      ember-cli-htmlbars: 6.3.0
-
-  '@glint/environment-ember-template-imports@2.0.0-alpha.3(16cd01190347de5f081b75edf0eb3dba)':
-    dependencies:
-      '@glint/core': 2.0.0-alpha.4(typescript@5.9.2)
-      '@glint/environment-ember-loose': 2.0.0-alpha.3(e4825fc0d38b869953debfa829dfc207)
+      '@glint/core': 2.0.0-alpha.7(typescript@5.9.2)
+      '@glint/environment-ember-loose': 2.0.0-alpha.3(967dd737e2db11e36be7951a1d1e4d83)
       '@glint/template': 1.6.0-alpha.2
       content-tag: 3.1.3
 
-  '@glint/environment-ember-template-imports@2.0.0-alpha.3(418845ca5eb21e5d2e6dfabb3f525072)':
+  '@glint/environment-ember-template-imports@2.0.0-alpha.3(f339ec2f9cb8537c4b9e7741352ae33e)':
     dependencies:
-      '@glint/core': 2.0.0-alpha.6(typescript@5.9.2)
-      '@glint/environment-ember-loose': 2.0.0-alpha.3(c4276a0584ccf488a2f41fc20848a3dd)
-      '@glint/template': 1.6.0-alpha.2
-      content-tag: 3.1.3
-
-  '@glint/environment-ember-template-imports@2.0.0-alpha.3(f11f8dfbb24869cd44328d60b5500bda)':
-    dependencies:
-      '@glint/core': 2.0.0-alpha.6(typescript@5.9.2)
-      '@glint/environment-ember-loose': 2.0.0-alpha.3(0b30c95d0b44dd8a3af202815f15f908)
+      '@glint/core': 2.0.0-alpha.7(typescript@5.9.2)
+      '@glint/environment-ember-loose': 2.0.0-alpha.3(6a63a32cb2df9773be250fd20b6aed58)
       '@glint/template': 1.6.0-alpha.2
       content-tag: 3.1.3
 
   '@glint/template@1.6.0-alpha.2': {}
 
-  '@glint/tsserver-plugin@2.0.0-alpha.6':
+  '@glint/tsserver-plugin@2.0.0-alpha.7':
     dependencies:
-      '@glint/core': 2.0.0-alpha.4(typescript@5.9.2)
-      '@volar/language-core': 2.4.12
-      '@volar/typescript': 2.4.12
+      '@glint/core': 2.0.0-alpha.7(typescript@5.9.2)
+      '@volar/language-core': 2.4.23
+      '@volar/typescript': 2.4.23
       jiti: 2.4.2
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -18303,28 +18345,24 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 1.2.0
 
-  '@volar/kit@2.4.12(typescript@5.9.2)':
+  '@volar/kit@2.4.23(typescript@5.9.2)':
     dependencies:
-      '@volar/language-service': 2.4.12
-      '@volar/typescript': 2.4.12
+      '@volar/language-service': 2.4.23
+      '@volar/typescript': 2.4.23
       typesafe-path: 0.2.2
       typescript: 5.9.2
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.1.0
 
-  '@volar/language-core@2.4.12':
-    dependencies:
-      '@volar/source-map': 2.4.12
-
   '@volar/language-core@2.4.23':
     dependencies:
       '@volar/source-map': 2.4.23
 
-  '@volar/language-server@2.4.12':
+  '@volar/language-server@2.4.23':
     dependencies:
-      '@volar/language-core': 2.4.12
-      '@volar/language-service': 2.4.12
-      '@volar/typescript': 2.4.12
+      '@volar/language-core': 2.4.23
+      '@volar/language-service': 2.4.23
+      '@volar/typescript': 2.4.23
       path-browserify: 1.0.1
       request-light: 0.7.0
       vscode-languageserver: 9.0.1
@@ -18332,28 +18370,20 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.1.0
 
-  '@volar/language-service@2.4.12':
+  '@volar/language-service@2.4.23':
     dependencies:
-      '@volar/language-core': 2.4.12
+      '@volar/language-core': 2.4.23
       vscode-languageserver-protocol: 3.17.5
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.1.0
 
-  '@volar/source-map@2.4.12': {}
-
   '@volar/source-map@2.4.23': {}
 
-  '@volar/test-utils@2.4.12':
+  '@volar/test-utils@2.4.23':
     dependencies:
-      '@volar/language-core': 2.4.12
-      '@volar/language-server': 2.4.12
+      '@volar/language-core': 2.4.23
+      '@volar/language-server': 2.4.23
       vscode-languageserver-textdocument: 1.0.12
-      vscode-uri: 3.1.0
-
-  '@volar/typescript@2.4.12':
-    dependencies:
-      '@volar/language-core': 2.4.12
-      path-browserify: 1.0.1
       vscode-uri: 3.1.0
 
   '@volar/typescript@2.4.23':
@@ -27296,6 +27326,8 @@ snapshots:
       turbo-windows-64: 2.5.6
       turbo-windows-arm64: 2.5.6
 
+  twgl.js@7.0.0: {}
+
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
@@ -27835,15 +27867,15 @@ snapshots:
       - supports-color
       - terser
 
-  volar-service-html@0.0.64(@volar/language-service@2.4.12):
+  volar-service-html@0.0.64(@volar/language-service@2.4.23):
     dependencies:
       vscode-html-languageservice: 5.4.0
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.1.0
     optionalDependencies:
-      '@volar/language-service': 2.4.12
+      '@volar/language-service': 2.4.23
 
-  volar-service-typescript@0.0.65(@volar/language-service@2.4.12):
+  volar-service-typescript@0.0.65(@volar/language-service@2.4.23):
     dependencies:
       path-browserify: 1.0.1
       semver: 7.7.2
@@ -27852,7 +27884,7 @@ snapshots:
       vscode-nls: 5.2.0
       vscode-uri: 3.1.0
     optionalDependencies:
-      '@volar/language-service': 2.4.12
+      '@volar/language-service': 2.4.23
 
   vscode-html-languageservice@5.4.0:
     dependencies:

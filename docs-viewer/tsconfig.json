@@ -1,8 +1,8 @@
 {
-  "include": ["src/**/*", "docs.warp-drive.io/.vitepress/config.mts", "docs.warp-drive.io/.vitepress/theme/**/*"],
+  "include": ["src/**/*", ".vitepress/config.mts", ".vitepress/theme/**/*"],
   "compilerOptions": {
     // Enable latest features
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
