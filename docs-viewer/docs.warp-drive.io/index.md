@@ -8,7 +8,7 @@ hero:
         parts for you like caching, persistence, request deduplication and testing."
   actions:
     - theme: brand
-      text: Get Started
+      text: Guides
       link: /guides
     - theme: alt
       text: API Docs

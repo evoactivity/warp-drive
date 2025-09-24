@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from "vue";
+import FontFaceObserver from "fontfaceobserver-es";
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from "vitepress/theme";
 import { data as members } from "../../data/contributors.data.ts";
 import { data as coreTeam } from "../../data/core.data.ts";
 import { data as top12 } from "../../data/all-time.data.ts";
 import ContributorList from "../../theme/ContributorList.vue";
 import Hero from "./hero.vue";
-import { onMounted, onUnmounted } from "vue";
-import FontFaceObserver from "fontfaceobserver-es";
+import Navigation from "./navigation.vue";
+import Bento from "./bento.vue";
 
 // So we can alter the fallback fonts to reduce layout shifts
 const cantarell = new FontFaceObserver("Cantarell");
@@ -26,7 +28,9 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <Navigation />
   <Hero />
+  <Bento />
 
   <VPTeamPage>
     <VPTeamPageTitle>

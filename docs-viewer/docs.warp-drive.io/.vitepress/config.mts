@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from 'vitepress';
 import { getGuidesStructure, postProcessApiDocs } from '../../src/site-utils.ts';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
 import { footnote } from '@mdit/plugin-footnote';
+import magicalSvg from 'vite-plugin-magical-svg';
 
 const TypeDocSidebar = await postProcessApiDocs();
 
@@ -38,7 +39,12 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [llmstxt(), plugin],
+    plugins: [
+      llmstxt(),
+      plugin,
+      // @ts-expect-error types don't match for some reason
+      magicalSvg({ target: 'vue', preserveWidthHeight: true }),
+    ],
   },
 
   // just until we have the guides and docs in a better state

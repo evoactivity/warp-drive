@@ -82,9 +82,13 @@ onUnmounted(() => {
   text-align: left;
   max-width: 1344px;
   margin: 0 auto;
-  padding: 11rem 2rem;
+  padding: 8rem 2rem;
   font-family:
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  @media (min-width: 980px) {
+    padding: 11rem 4rem;
+  }
 
   .content {
     max-width: 700px;
@@ -99,12 +103,11 @@ onUnmounted(() => {
     font-family:
       "Syncopate", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
-    font-size: 4rem;
+    font-size: clamp(3rem, 4.5vw, 4rem);
     font-weight: 900;
     line-height: 1;
     margin: 0 0 2.5rem;
     color: #ffeacd;
-    min-height: 256px;
   }
 
   p {

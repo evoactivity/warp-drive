@@ -41,5 +41,8 @@
   },
   "volta": {
     "extends": "../package.json"
+  },
+  "devDependencies": {
+    "vite-plugin-magical-svg": "^1.8.0"
   }
 }
