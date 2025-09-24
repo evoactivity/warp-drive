@@ -83,6 +83,8 @@ onUnmounted(() => {
   max-width: 1344px;
   margin: 0 auto;
   padding: 11rem 2rem;
+  font-family:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   .content {
     max-width: 700px;
@@ -94,24 +96,46 @@ onUnmounted(() => {
   }
 
   h1 {
-    font-size: 3rem;
+    font-family:
+      "Syncopate", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-size: 4rem;
     font-weight: 900;
-    margin: 0;
-    margin-bottom: 2.5rem;
-    color: #ffeacd;
-    font-family: "Syncopate", sans-serif;
     line-height: 1;
-    max-width: 620px;
+    margin: 0 0 2.5rem;
+    color: #ffeacd;
+    min-height: 256px;
   }
 
   p {
+    font-family:
+      "Cantarell", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.4;
 
     & :deep(strong) {
       color: #ff8a00;
     }
+  }
+}
+
+html:not(.fonts-loaded) .hero {
+  h1 {
+    font-family:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 900;
+    font-stretch: 122%;
+    line-height: 0.9;
+    font-size-adjust: cap-height 1;
+  }
+
+  p {
+    font-family:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size-adjust: cap-height 0.75;
+    margin-bottom: 2.6rem;
   }
 }
 

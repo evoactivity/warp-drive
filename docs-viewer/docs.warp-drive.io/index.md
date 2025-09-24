@@ -3,7 +3,7 @@ layout: false
 
 hero:
   name: "The Manual"
-  text: Boldly Go Where No App Has Gone Before
+  text: Boldly go where no app has gone before
   tagline: "WarpDrive is a universal data framework for <strong>ambitious</strong> web applications. Handling the tough
         parts for you like caching, persistence, request deduplication and testing."
   actions:

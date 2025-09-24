@@ -23,6 +23,7 @@
     "@types/debug": "4.1.12",
     "chalk": "5.6.0",
     "debug": "4.4.1",
+    "fontfaceobserver-es": "^3.3.3",
     "front-matter": "^4.0.2",
     "twgl.js": "^7.0.0",
     "typedoc": "^0.28.10",

@@ -6,6 +6,15 @@ import { data as top12 } from "../../data/all-time.data.ts";
 import ContributorList from "../../theme/ContributorList.vue";
 import Hero from "./hero.vue";
 import { onMounted, onUnmounted } from "vue";
+import FontFaceObserver from "fontfaceobserver-es";
+
+// So we can alter the fallback fonts to reduce layout shifts
+const cantarell = new FontFaceObserver("Cantarell");
+const syncopate = new FontFaceObserver("Syncopate");
+
+Promise.all([cantarell.load(), syncopate.load()]).then(() => {
+  document.documentElement.classList.add("fonts-loaded");
+});
 
 onMounted(() => {
   document.body.classList.add("homepage", "dark");
