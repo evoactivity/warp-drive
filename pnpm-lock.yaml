@@ -51,6 +51,9 @@ patchedDependencies:
   testem@3.11.0:
     hash: cf147865cff81f2d0f3ed51d274f9fdee7b4ad675a902248aa317c07272fbea5
     path: patches/testem@3.11.0.patch
+  twgl.js:
+    hash: 8460fb19ce2bddde875ff40c8b72b52ed4d32980e2c2fac5a529fa2dacce8ec1
+    path: patches/twgl.js.patch
 
 importers:
 
@@ -185,7 +188,7 @@ importers:
         version: 4.0.2
       twgl.js:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.0.0(patch_hash=8460fb19ce2bddde875ff40c8b72b52ed4d32980e2c2fac5a529fa2dacce8ec1)
       typedoc:
         specifier: ^0.28.10
         version: 0.28.10(typescript@5.9.2)
@@ -19109,7 +19112,7 @@ snapshots:
       debug: 4.4.1
       fontfaceobserver-es: 3.3.3
       front-matter: 4.0.2
-      twgl.js: 7.0.0
+      twgl.js: 7.0.0(patch_hash=8460fb19ce2bddde875ff40c8b72b52ed4d32980e2c2fac5a529fa2dacce8ec1)
       typedoc: 0.28.10(typescript@5.9.2)
       typedoc-plugin-markdown: 4.8.1(typedoc@0.28.10(typescript@5.9.2))
       typedoc-plugin-mdn-links: 5.0.9(typedoc@0.28.10(typescript@5.9.2))
@@ -27461,7 +27464,7 @@ snapshots:
       turbo-windows-64: 2.5.6
       turbo-windows-arm64: 2.5.6
 
-  twgl.js@7.0.0: {}
+  twgl.js@7.0.0(patch_hash=8460fb19ce2bddde875ff40c8b72b52ed4d32980e2c2fac5a529fa2dacce8ec1): {}
 
   type-check@0.4.0:
     dependencies:

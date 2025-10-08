@@ -8,9 +8,10 @@ import { useData } from "vitepress";
 const { frontmatter } = useData();
 
 const starSpeed = ref(0.2);
+const trailLength = ref(0.004);
 
 function increaseSpeed() {
-  starSpeed.value = 1;
+  starSpeed.value = 0.6;
 }
 
 function resetSpeed() {
@@ -28,7 +29,7 @@ onUnmounted(() => {
 
 <template>
   <div class="background-container">
-    <Starfield :speed="starSpeed" :enable-scroll-speed="false" :max-fps="60" />
+    <Starfield :speed="starSpeed" :trail-length="trailLength" :enable-scroll-speed="false" :max-fps="60" />
     <Bubble :speed="1" :max-fps="60" />
   </div>
   <div class="hero">

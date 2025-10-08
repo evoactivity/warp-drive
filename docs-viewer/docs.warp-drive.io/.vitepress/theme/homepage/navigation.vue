@@ -28,7 +28,7 @@ import word from "./word.svg";
   max-width: 1344px;
   padding: 0;
   margin: 0 auto;
-  z-index: 1000;
+  z-index: 1;
 
   @media (min-width: 980px) {
     padding: 0 2rem;

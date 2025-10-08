@@ -1,0 +1,83 @@
+diff --git a/dist/7.x/twgl-full.d.ts b/dist/7.x/twgl-full.d.ts
+index 707f44818031e41dc507a949a1da679f5f5f3c70..a14918c16c2147e6ab56098ccd08897b733e671a 100644
+--- a/dist/7.x/twgl-full.d.ts
++++ b/dist/7.x/twgl-full.d.ts
+@@ -166,7 +166,7 @@ export function getContext(canvas: HTMLCanvasElement, opt_attribs?: WebGLContext
+  * @return {boolean} true if the canvas was resized.
+  * @memberOf module:twgl
+  */
+-export function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement, multiplier?: number): boolean;
++export function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement, multiplier?: number, maxWidth?: number, maxHeight?: number): boolean;
+ /**
+  * The info for an attribute. This is effectively just the arguments to `gl.vertexAttribPointer` plus the WebGLBuffer
+  * for the attribute.
+diff --git a/dist/7.x/twgl-full.js b/dist/7.x/twgl-full.js
+index 3d5a231d19e89adc46e217ae4f65a185514ec15c..e93b9b96b1f70d4c4ada2e7df51438b97354b18b 100644
+--- a/dist/7.x/twgl-full.js
++++ b/dist/7.x/twgl-full.js
+@@ -10552,11 +10552,11 @@ function getContext(canvas, opt_attribs) {
+  * @return {boolean} true if the canvas was resized.
+  * @memberOf module:twgl
+  */
+-function resizeCanvasToDisplaySize(canvas, multiplier) {
++function resizeCanvasToDisplaySize(canvas, multiplier, maxWidth, maxHeight) {
+   multiplier = multiplier || 1;
+   multiplier = Math.max(0, multiplier);
+-  var width = canvas.clientWidth * multiplier | 0;
+-  var height = canvas.clientHeight * multiplier | 0;
++  var width = Math.min(canvas.clientWidth * multiplier | 0, maxWidth);
++  var height = Math.min(canvas.clientHeight * multiplier | 0, maxHeight);
+   if (canvas.width !== width || canvas.height !== height) {
+     canvas.width = width;
+     canvas.height = height;
+diff --git a/dist/7.x/twgl-full.module.js b/dist/7.x/twgl-full.module.js
+index ec3cefd49af18a5b48189f956c7d143e299881b4..5f9ba69f3d7c2f510f5a868b94642cf1bb096a9d 100644
+--- a/dist/7.x/twgl-full.module.js
++++ b/dist/7.x/twgl-full.module.js
+@@ -10533,11 +10533,11 @@ function getContext(canvas, opt_attribs) {
+  * @return {boolean} true if the canvas was resized.
+  * @memberOf module:twgl
+  */
+-function resizeCanvasToDisplaySize(canvas, multiplier) {
++function resizeCanvasToDisplaySize(canvas, multiplier, maxWidth, maxHeight) {
+   multiplier = multiplier || 1;
+   multiplier = Math.max(0, multiplier);
+-  const width  = canvas.clientWidth  * multiplier | 0;
+-  const height = canvas.clientHeight * multiplier | 0;
++  var width = Math.min(canvas.clientWidth * multiplier | 0, maxWidth);
++  var height = Math.min(canvas.clientHeight * multiplier | 0, maxHeight);
+   if (canvas.width !== width || canvas.height !== height) {
+     canvas.width = width;
+     canvas.height = height;
+diff --git a/dist/7.x/twgl.d.ts b/dist/7.x/twgl.d.ts
+index 7d887902a95023ef74eb8d11313d16c3ef49a6c0..09876fc1749c6788355882c313e20287c6de6900 100644
+--- a/dist/7.x/twgl.d.ts
++++ b/dist/7.x/twgl.d.ts
+@@ -166,7 +166,7 @@ export function getContext(canvas: HTMLCanvasElement, opt_attribs?: WebGLContext
+  * @return {boolean} true if the canvas was resized.
+  * @memberOf module:twgl
+  */
+-export function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement, multiplier?: number): boolean;
++export function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement, multiplier?: number, maxWidth?: number, maxHeight?: number): boolean;
+ /**
+  * The info for an attribute. This is effectively just the arguments to `gl.vertexAttribPointer` plus the WebGLBuffer
+  * for the attribute.
+diff --git a/dist/7.x/twgl.js b/dist/7.x/twgl.js
+index 04295ccce1d271cdf19dbca276cbca342ec09a01..9b8898e01be768efbd9037f2c91bb4f79a2e7ae1 100644
+--- a/dist/7.x/twgl.js
++++ b/dist/7.x/twgl.js
+@@ -7561,11 +7561,11 @@ function getContext(canvas, opt_attribs) {
+  * @return {boolean} true if the canvas was resized.
+  * @memberOf module:twgl
+  */
+-function resizeCanvasToDisplaySize(canvas, multiplier) {
++function resizeCanvasToDisplaySize(canvas, multiplier, maxWidth, maxHeight) {
+   multiplier = multiplier || 1;
+   multiplier = Math.max(0, multiplier);
+-  var width = canvas.clientWidth * multiplier | 0;
+-  var height = canvas.clientHeight * multiplier | 0;
++  var width = Math.min(canvas.clientWidth * multiplier | 0, maxWidth);
++  var height = Math.min(canvas.clientHeight * multiplier | 0, maxHeight);
+   if (canvas.width !== width || canvas.height !== height) {
+     canvas.width = width;
+     canvas.height = height;

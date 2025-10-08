@@ -98,7 +98,7 @@ const fragmentShaderSource = /*glsl*/ `
     // Layer multiple star fields for depth effect
     for (int i = 0; i < 10; i++) {
       z += 1.02;
-      vec2 coord = vec2(pow(d, trailLength), a) * 356.0;
+      vec2 coord = vec2(pow(d, trailLength), a) * 356.0 ;
       vec2 delta = vec2(1.0 + z * 15.0, 1.0);
       float c = Cell(coord -= delta);
       c += Cell(coord -= delta);
@@ -163,9 +163,9 @@ const { canvas, isLoading, hasError, errorMessage, shouldAnimate } = useWebGLCom
 <style scoped>
 .starfield-canvas {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: block;
-  min-height: 900px;
+  mix-blend-mode: screen;
 }
 
 .error-state {

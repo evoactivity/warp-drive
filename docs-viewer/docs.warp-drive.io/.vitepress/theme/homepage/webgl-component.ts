@@ -98,7 +98,12 @@ export function renderFrame(
 
   time *= 0.001; // Convert to seconds
 
-  const needsResize = twgl.resizeCanvasToDisplaySize(gl.canvas as HTMLCanvasElement);
+  const needsResize = twgl.resizeCanvasToDisplaySize(
+    gl.canvas as HTMLCanvasElement,
+    window.devicePixelRatio,
+    2500,
+    1800
+  );
   if (needsResize) {
     uniforms.u_resolution = [gl.canvas.width, gl.canvas.height];
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
