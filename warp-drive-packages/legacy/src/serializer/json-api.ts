@@ -28,13 +28,14 @@ import { JSONSerializer } from './json';
   This process involves normalizing property names, transforming
   attribute values and serializing relationships.
 
-  `JSONAPISerializer` supports the http://jsonapi.org/ spec and is the
-  serializer recommended by Ember Data.
+  `JSONAPISerializer` supports the http://jsonapi.org/ spec, though
+  even compliant {json:api} servers may find writing an application
+  specific serializer better suited to their needs and more performant.
 
   This serializer normalizes a JSON API payload that looks like:
 
   ```js [app/models/player.js]
-  import Model, { attr, belongsTo } from '@ember-data/model';
+  import Model, { attr, belongsTo } from '@warp-drive/legacy/model';
 
   export default class Player extends Model {
     @attr('string') name;
@@ -45,7 +46,7 @@ import { JSONSerializer } from './json';
   ```
 
   ```js [app/models/club.js]
-  import Model, { attr, hasMany } from '@ember-data/model';
+  import Model, { attr, hasMany } from '@warp-drive/legacy/model';
 
   export default class Club extends Model {
     @attr('string') name;
@@ -98,7 +99,7 @@ import { JSONSerializer } from './json';
     }
   ```
 
-  to the format that the Ember Data store expects.
+  to the format that the JSONAPICache expects.
 
   ### Customizing meta
 
@@ -110,7 +111,7 @@ import { JSONSerializer } from './json';
   `extractRelationship`.
 
   ```js [app/serializers/application.js]
-  import JSONAPISerializer from '@ember-data/serializer/json-api';
+  import { JSONAPISerializer } from '@warp-drive/legacy/serializer/json-api';
 
   export default class ApplicationSerializer extends JSONAPISerializer {
     normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
@@ -332,7 +333,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
 
   /**
     Dasherizes and singularizes the model name in the payload to match
-    the format Ember Data uses internally for the model name.
+    the common convention for model names.
 
     For example the key `posts` would be converted to `post` and the
     key `studentAssesments` would be converted to `student-assesment`.
@@ -398,7 +399,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
     Example
 
     ```js [app/serializers/application.js]
-    import JSONAPISerializer from '@ember-data/serializer/json-api';
+    import JSONAPISerializer from '@warp-drive/legacy/serializer/json-api';
     import { dasherize } from '<app-name>/utils/string-utils';
 
     export default class ApplicationSerializer extends JSONAPISerializer {
@@ -427,7 +428,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
    Example
 
     ```js [app/serializers/post.js]
-    import JSONAPISerializer from '@ember-data/serializer/json-api';
+    import JSONAPISerializer from '@warp-drive/legacy/serializer/json-api';
     import { underscore } from '<app-name>/utils/string-utils';
 
     export default class ApplicationSerializer extends JSONAPISerializer {
@@ -450,7 +451,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
     For example, consider this model:
 
     ```js [app/models/comment.js]
-    import Model, { attr, belongsTo } from '@ember-data/model';
+    import Model, { attr, belongsTo } from '@warp-drive/legacy/model';
 
     export default class CommentModel extends Model {
       @attr title;
@@ -515,7 +516,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
     this class.
 
     ```js [app/serializers/post.js]
-    import JSONAPISerializer from '@ember-data/serializer/json-api';
+    import JSONAPISerializer from '@warp-drive/legacy/serializer/json-api';
 
     export default class PostSerializer extends JSONAPISerializer {
       serialize(snapshot, options) {
@@ -541,7 +542,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
     and `eachRelationship` on the record.
 
     ```js [app/serializers/application.js]
-    import JSONAPISerializer from '@ember-data/serializer/json-api';
+    import JSONAPISerializer from '@warp-drive/legacy/serializer/json-api';
     import { underscore, singularize } from '<app-name>/utils/string-utils';
 
     export default class ApplicationSerializer extends JSONAPISerializer {
@@ -592,7 +593,7 @@ const JSONAPISerializer: any = (JSONSerializer as typeof EmberObject).extend({
     on the returned object.
 
     ```js [app/serializers/post.js]
-    import JSONAPISerializer from '@ember-data/serializer/json-api';
+    import JSONAPISerializer from '@warp-drive/legacy/serializer/json-api';
 
     export default class PostSerializer extends JSONAPISerializer {
       serialize(snapshot, options) {

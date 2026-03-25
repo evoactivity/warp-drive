@@ -1,25 +1,42 @@
 <p align="center">
   <img
     class="project-logo"
-    src="./logos/ember-data-logo-dark.svg#gh-dark-mode-only"
-    alt="EmberData Serializer"
-    width="240px"
-    title="EmberData Serializer"
-    />
-  <img
-    class="project-logo"
-    src="./logos/ember-data-logo-light.svg#gh-light-mode-only"
-    alt="EmberData Serializer"
-    width="240px"
-    title="EmberData Serializer"
+    src="./logos/logo-yellow-slab.svg"
+    alt="WarpDrive"
+    width="180px"
+    title="WarpDrive"
     />
 </p>
 
+![NPM Stable Version](https://img.shields.io/npm/v/ember-data/latest?label=version&style=flat&color=fdb155)
+![NPM Downloads](https://img.shields.io/npm/dm/ember-data.svg?style=flat&color=fdb155)
+![License](https://img.shields.io/github/license/warp-drive-data/warp-drive.svg?style=flat&color=fdb155)
+[![EmberJS Discord Community Server](https://img.shields.io/badge/EmberJS-grey?logo=discord&logoColor=fdb155)](https://discord.gg/zT3asNS
+)
+[![WarpDrive Discord Server](https://img.shields.io/badge/WarpDrive-grey?logo=discord&logoColor=fdb155)](https://discord.gg/PHBbnWJx5S
+)
+
+<p align="center">
+  <br>
+  <a href="https://warp-drive.io">WarpDrive</a> is the lightweight data library for web apps &mdash;
+  <br>
+  universal, typed, reactive, and ready to scale.
+  <br/><br/>
+</p>
+
+---
+
+# @ember-data/serializer
+
 <p align="center">Provides JSON, REST and JSON:API Implementations of the legacy <a href="https://api.emberjs.com/ember-data/release/classes/%3CInterface%3E%20Serializer">Serializer Interface</a></p>
 
-> **Caution** ⚠️ **This is LEGACY documentation** for a feature that is no longer encouraged to be used.
-> If starting a new app or thinking of implementing a new serializer, consider writing a [Handler](https://api.emberjs.com/ember-data/release/classes/%3CInterface%3E%20Handler)
-> instead to be used with the [RequestManager](https://github.com/warp-drive-data/warp-drive/tree/main/packages/request#readme)
+> [!WARNING]
+> **⚠️ This is a legacy package** not recommended for new applications.
+>
+> **This is LEGACY documentation** for a feature that is no longer encouraged to be used.
+
+> If starting a new app or thinking of implementing a new serializer, consider writing a [Handler](https://warp-drive.io/api/@warp-drive/core/request/interfaces/Handler)
+> instead to be used with the [RequestManager](https://warp-drive.io/api/@warp-drive/core/classes/RequestManager)
 
 ## Installation
 

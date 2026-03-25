@@ -26,7 +26,7 @@ import type { ApiError } from '@warp-drive/core/types/spec/error';
   it was closed for maintenance:
 
   ```js [app/adapters/maintenance-error.js]
-  import AdapterError from '@ember-data/adapter/error';
+  import AdapterError from '@warp-drive/legacy/adapter/error';
 
   export default AdapterError.extend({ message: "Down for maintenance." });
   ```
@@ -34,7 +34,7 @@ import type { ApiError } from '@warp-drive/core/types/spec/error';
   This error would then be returned by an adapter's `handleResponse` method:
 
   ```js [app/adapters/application.js]
-  import JSONAPIAdapter from '@ember-data/adapter/json-api';
+  import JSONAPIAdapter from '@warp-drive/legacy/adapter/json-api';
   import MaintenanceError from './maintenance-error';
 
   export default class ApplicationAdapter extends JSONAPIAdapter {
@@ -148,8 +148,8 @@ function extend<Final extends AdapterRequestError>(
   transition to the `invalid` state and the errors will be set to the
   `errors` property on the record.
 
-  For Ember Data to correctly map errors to their corresponding
-  properties on the model, Ember Data expects each error to be
+  For WarpDrive to correctly map errors to their corresponding
+  properties on the model, WarpDrive expects each error to be
   a valid JSON-API error object with a `source/pointer` that matches
   the property name. For example, if you had a Post model that
   looked like this.
@@ -169,8 +169,8 @@ function extend<Final extends AdapterRequestError>(
 
   ```js [app/adapters/post.js]
   import RSVP from 'RSVP';
-  import RESTAdapter from '@ember-data/adapter/rest';
-  import { InvalidError } from '@ember-data/adapter/error';
+  import RESTAdapter from '@warp-drive/legacy/adapter/rest';
+  import { InvalidError } from '@warp-drive/legacy/adapter/error';
 
   export default class ApplicationAdapter extends RESTAdapter {
     updateRecord() {
@@ -215,7 +215,7 @@ InvalidError.prototype.code = 'InvalidError';
   connection if an adapter operation has timed out:
 
   ```js [app/routes/application.js]
-  import { TimeoutError } from '@ember-data/adapter/error';
+  import { TimeoutError } from '@warp-drive/legacy/adapter/error';
 
   export default class ApplicationRoute extends Route {
     @action
@@ -267,7 +267,7 @@ AbortError.prototype.code = 'AbortError';
   request is unauthorized:
 
   ```js [app/routes/application.js]
-  import { UnauthorizedError } from '@ember-data/adapter/error';
+  import { UnauthorizedError } from '@warp-drive/legacy/adapter/error';
 
   export default class ApplicationRoute extends Route {
     @action
@@ -319,7 +319,7 @@ ForbiddenError.prototype.code = 'ForbiddenError';
   for a specific model that does not exist. For example:
 
   ```js [app/routes/post.js]
-  import { NotFoundError } from '@ember-data/adapter/error';
+  import { NotFoundError } from '@warp-drive/legacy/adapter/error';
 
   export default class PostRoute extends Route {
     @service store;

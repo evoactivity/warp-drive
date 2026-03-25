@@ -1,6 +1,6 @@
 import { assert } from '@warp-drive/build-config/macros';
 
-import { entangleSignal } from '../../../store/-private';
+import { entangleSignal } from '../../../signals/-private';
 import type { ObjectValue, Value } from '../../../types/json/raw';
 import type { ObjectSchema, SchemaObjectField } from '../../../types/schema/fields';
 import type { KindContext } from '../default-mode';
@@ -110,7 +110,8 @@ export function setSchemaObjectField(context: KindContext<SchemaObjectField>): b
     const schemaFields = store.schema.fields({ type: context.field.type as string });
     for (const key of Object.keys(newValue)) {
       if (!schemaFields.has(key)) {
-        throw new Error(`Field ${key} does not exist on schema object ${context.field.type}`);
+        assert(`Field ${key} does not exist on schema object ${context.field.type}`);
+        return false;
       }
     }
   } else {

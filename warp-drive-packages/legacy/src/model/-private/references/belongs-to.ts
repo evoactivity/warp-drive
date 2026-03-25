@@ -1,7 +1,8 @@
 import type { NotificationType, Store } from '@warp-drive/core';
 import { DEBUG } from '@warp-drive/core/build-config/env';
 import type { Graph, ResourceEdge } from '@warp-drive/core/graph/-private';
-import { assertPrivateStore, defineNonEnumerableSignal, memoized } from '@warp-drive/core/store/-private';
+import { defineNonEnumerableSignal, memoized } from '@warp-drive/core/signals/-leaked';
+import { assertPrivateStore } from '@warp-drive/core/store/-private';
 import type { PersistedResourceKey, ResourceKey } from '@warp-drive/core/types/identifier';
 import type { TypeFromInstance, TypeFromInstanceOrString } from '@warp-drive/core/types/record';
 import type {
@@ -37,11 +38,11 @@ function isResourceIdentiferWithRelatedLinks(
  and manipulation of a belongsTo relationship.
 
  It is especially useful when you're dealing with `async` relationships
- from `@ember-data/model` as it allows synchronous access to
+ from `@warp-drive/legacy/model` as it allows synchronous access to
  the relationship data if loaded, as well as APIs for loading, reloading
  the data or accessing available information without triggering a load.
 
- It may also be useful when using `sync` relationships with `@ember-data/model`
+ It may also be useful when using `sync` relationships with `@warp-drive/legacy/model`
  that need to be loaded/reloaded with more precise timing than marking the
  relationship as `async` and relying on autofetch would have allowed.
 
@@ -57,7 +58,6 @@ function isResourceIdentiferWithRelatedLinks(
  References are "stable", meaning that multiple calls to retrieve the reference
   for a given relationship will always return the same HasManyReference.
 
- @class BelongsToReference
  @public
  */
 export default class BelongsToReference<
@@ -71,18 +71,12 @@ export default class BelongsToReference<
   /**
    * The field name on the parent record for this has-many relationship.
    *
-   * @property key
-   * @type {String}
-   * @public
    */
   declare key: K;
 
   /**
    * The type of resource this relationship will contain.
    *
-   * @property type
-   * @type {String}
-   * @public
    */
   declare type: TypeFromInstanceOrString<Related>;
 
@@ -135,9 +129,6 @@ export default class BelongsToReference<
    * The identifier of the record that this reference refers to.
    * `null` if no related record is known.
    *
-   * @property identifier
-   * @type {ResourceKey | null}
-   * @public
    */
   @memoized
   get identifier(): ResourceKey<TypeFromInstanceOrString<Related>> | null {
@@ -201,14 +192,14 @@ export default class BelongsToReference<
    ```
 
    @public
-   @return {String} The id of the record in this belongsTo relationship.
+   @return The id of the record in this belongsTo relationship.
    */
   id(): string | null {
     return this.identifier?.id || null;
   }
 
   /**
-   The link Ember Data will use to fetch or reload this belongs-to
+   The link WarpDrive will use to fetch or reload this belongs-to
    relationship. By default it uses only the "related" resource linkage.
 
    Example
@@ -242,7 +233,7 @@ export default class BelongsToReference<
    ```
 
    @public
-   @return {String} The link Ember Data will use to fetch or reload this belongs-to relationship.
+   @return The link WarpDrive will use to fetch or reload this belongs-to relationship.
    */
   link(): string | null {
     const resource = this._resource();
@@ -305,7 +296,7 @@ export default class BelongsToReference<
    ```
 
     @public
-   @return {Object} The meta information for the belongs-to relationship.
+   @return The meta information for the belongs-to relationship.
    */
   meta(): Meta | null {
     let meta: Meta | null = null;
@@ -333,7 +324,7 @@ export default class BelongsToReference<
    Example
 
    ```js [app/models/post.js]
-   import Model, { hasMany } from '@ember-data/model';
+   import Model, { hasMany } from '@warp-drive/legacy/model';
 
    export default class PostModel extends Model {
      @hasMany('comment', { async: true, inverse: null }) comments;
@@ -364,7 +355,7 @@ export default class BelongsToReference<
    ```
 
    @public
-   @return {String} The name of the remote type. This should either be `link` or `id`
+   @return The name of the remote type. This should either be `link` or `id`
    */
   remoteType(): 'link' | 'id' {
     const value = this._resource();
@@ -462,9 +453,9 @@ export default class BelongsToReference<
    forcing the load of all of the associated record.
 
    @public
-   @param {Object} doc a JSONAPI document object describing the new value of this relationship.
-   @param {Boolean} [skipFetch] if `true`, do not attempt to fetch unloaded records
-   @return {Promise<OpaqueRecordInstance | null | void>}
+   @param doc a JSONAPI document object describing the new value of this relationship.
+   @param skipFetch [optional] if `true`, do not attempt to fetch unloaded records
+   @return a promise that resolves with the record in this belongs-to relationship after the push has completed.
   */
   async push(doc: SingleResourceDocument, skipFetch?: boolean): Promise<Related | null | void> {
     const { store } = this;
@@ -554,7 +545,7 @@ export default class BelongsToReference<
    ```
 
     @public
-   @return {Model} the record in this relationship
+   @return the record in this relationship
    */
   value(): Related | null {
     const resource = this._resource();
@@ -608,7 +599,7 @@ export default class BelongsToReference<
    });
    ```
    ```js [app/adapters/user.js]
-   import Adapter from '@ember-data/adapter';
+   import Adapter from '@warp-drive/legacy/adapter';
 
    export default class UserAdapter extends Adapter {
      findRecord(store, type, id, snapshot) {
@@ -619,8 +610,8 @@ export default class BelongsToReference<
    ```
 
     @public
-   @param {Object} options the options to pass in.
-   @return {Promise} a promise that resolves with the record in this belongs-to relationship.
+   @param options the options to pass in.
+   @return a promise that resolves with the record in this belongs-to relationship.
    */
   async load(options?: Record<string, unknown>): Promise<Related | null> {
     const support: LegacySupport = (LEGACY_SUPPORT as Map<ResourceKey, LegacySupport>).get(this.___identifier)!;
@@ -635,7 +626,7 @@ export default class BelongsToReference<
 
   /**
    Triggers a reload of the value in this relationship. If the
-   remoteType is `"link"` Ember Data will use the relationship link to
+   remoteType is `"link"` WarpDrive will use the relationship link to
    reload the relationship. Otherwise it will reload the record by its
    id.
 
@@ -679,8 +670,8 @@ export default class BelongsToReference<
    ```
 
     @public
-   @param {Object} options the options to pass in.
-   @return {Promise} a promise that resolves with the record in this belongs-to relationship after the reload has completed.
+   @param options the options to pass in.
+   @return a promise that resolves with the record in this belongs-to relationship after the reload has completed.
    */
   reload(options?: Record<string, unknown>): Promise<Related | null> {
     const support: LegacySupport = (LEGACY_SUPPORT as Map<ResourceKey, LegacySupport>).get(this.___identifier)!;

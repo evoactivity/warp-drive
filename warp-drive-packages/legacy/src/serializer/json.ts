@@ -48,7 +48,7 @@ const PRIMARY_ATTRIBUTE_KEY = 'base';
   For example, given the following `User` model and JSON payload:
 
   ```js [app/models/user.js]
-  import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
+  import Model, { attr, belongsTo, hasMany } from '@warp-drive/legacy/model';
 
   export default class UserModel extends Model {
     @hasMany('user') friends;
@@ -69,8 +69,8 @@ const PRIMARY_ATTRIBUTE_KEY = 'base';
   }
   ```
 
-  `JSONSerializer` will normalize the JSON payload to the JSON API format that the
-  Ember Data store expects.
+  `JSONSerializer` will normalize the JSON payload to the {json:api} format that the
+  JSONAPICache uses to cache data in the Store.
 
   You can customize how JSONSerializer processes its payload by passing options in
   the `attrs` hash or by subclassing the `JSONSerializer` and overriding hooks:
@@ -105,7 +105,7 @@ const PRIMARY_ATTRIBUTE_KEY = 'base';
 const JSONSerializer: any = Serializer.extend({
   /**
     The `primaryKey` is used when serializing and deserializing
-    data. Ember Data always uses the `id` property to store the id of
+    data. WarpDrive always uses the `id` property to store the id of
     the record. The external source may not always follow this
     convention. In these cases it is useful to override the
     `primaryKey` property to match the `primaryKey` of your external
@@ -121,8 +121,6 @@ const JSONSerializer: any = Serializer.extend({
     }
     ```
 
-    @property primaryKey
-    @type {String}
     @public
     @default 'id'
   */
@@ -138,7 +136,7 @@ const JSONSerializer: any = Serializer.extend({
     Example
 
     ```js [app/models/person.js]
-    import Model, { attr } from '@ember-data/model';
+    import Model, { attr } from '@warp-drive/legacy/model';
 
     export default class PersonModel extends Model {
       @attr('string') firstName;
@@ -614,9 +612,6 @@ const JSONSerializer: any = Serializer.extend({
     ```
 
     @public
-    @param {Model} typeClass
-    @param {Object} hash
-    @return {Object}
   */
   normalize(modelClass: ModelSchema, resourceHash: object): object {
     let data = null;
@@ -667,9 +662,6 @@ const JSONSerializer: any = Serializer.extend({
     http://jsonapi.org/format/#document-resource-object-attributes
 
     @public
-    @param {Object} modelClass
-    @param {Object} resourceHash
-    @return {Object}
   */
   extractAttributes(modelClass: ModelSchema, resourceHash: object): object {
     let attributeKey;
@@ -829,8 +821,7 @@ const JSONSerializer: any = Serializer.extend({
     Dasherizes the model name in the payload
 
     @public
-    @param {String} key
-    @return {String} the model's modelName
+    @return the model's modelName
   */
   modelNameFromPayloadKey(key: string): string {
     return dasherize(singularize(key));
@@ -991,7 +982,7 @@ const JSONSerializer: any = Serializer.extend({
     For example, consider this model:
 
     ```js [app/models/comment.js]
-    import Model, { attr, belongsTo } from '@ember-data/model';
+    import Model, { attr, belongsTo } from '@warp-drive/legacy/model';
 
     export default class CommentModel extends Model {
       @attr title;
@@ -1167,7 +1158,7 @@ const JSONSerializer: any = Serializer.extend({
     For example, your server may expect underscored root objects.
 
     ```js [app/serializers/application.js]
-    import RESTSerializer from '@ember-data/serializer/rest';
+    import RESTSerializer from '@warp-drive/legacy/serializer/rest';
     import { underscoren} from '<app-name>/utils/string-utils';
 
     export default class ApplicationSerializer extends RESTSerializer {
@@ -1471,11 +1462,7 @@ const JSONSerializer: any = Serializer.extend({
     ```
 
     @public
-    @param {Store} store
-    @param {Model} typeClass
-    @param {Object} payload
-    @param {(String|Number)} id
-    @return {Object} json The deserialized errors
+    @return json The deserialized errors
   */
   extractErrors(store: Store, typeClass: ModelSchema, payload: object, id: string | null): object {
     // @ts-expect-error

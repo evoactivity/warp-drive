@@ -3,9 +3,13 @@ layout: false
 
 hero:
   name: "The Manual"
-  text: Boldly go where no app has gone before
+  text: Boldly Read What No Dev Has Read Before
   tagline: "WarpDrive is a universal data framework for <strong>ambitious</strong> web applications. Handling the tough
         parts for you like caching, persistence, request deduplication and testing."
+  image:
+    light: /logos/warp-drive/logo-chrome-slab@2x.png
+    dark: /logos/warp-drive/logo-yellow-slab.svg
+    alt: WarpDrive
   actions:
     - theme: brand
       text: Guides

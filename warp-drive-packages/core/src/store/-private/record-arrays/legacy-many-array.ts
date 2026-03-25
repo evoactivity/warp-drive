@@ -4,6 +4,7 @@ import { DEPRECATE_MANY_ARRAY_DUPLICATES } from '@warp-drive/core/build-config/d
 import { assert } from '@warp-drive/core/build-config/macros';
 
 import { Context } from '../../../reactive/-private.ts';
+import { notifyInternalSignal, type WarpDriveSignal } from '../../../signals/-private.ts';
 import type { BaseFinderOptions, ResourceKey } from '../../../types.ts';
 import type { LocalRelationshipOperation } from '../../../types/graph.ts';
 import type { ObjectValue } from '../../../types/json/raw.ts';
@@ -12,7 +13,6 @@ import type { LegacyHasManyField, LinksModeHasManyField } from '../../../types/s
 import type { Links, Meta, PaginationLinks } from '../../../types/spec/json-api-raw.ts';
 import { recordIdentifierFor } from '../caches/instance-cache.ts';
 import { isResourceKey } from '../managers/cache-key-manager.ts';
-import { notifyInternalSignal, type WarpDriveSignal } from '../new-core-tmp/reactivity/internal.ts';
 import type { CreateRecordProperties } from '../store-service.ts';
 import { save } from './-utils.ts';
 import type { LegacyLiveArrayCreateOptions } from './legacy-live-array.ts';
@@ -30,7 +30,7 @@ import { createReactiveResourceArray, destroy, type ReactiveResourceArray } from
 
   ### Inverses
 
-  Often, the relationships in Ember Data applications will have
+  Often, the relationships in WarpDrive applications will have
   an inverse. For example, imagine the following models are
   defined:
 
@@ -325,7 +325,25 @@ function _MUTATE<T>(
     }
 
     case 'splice': {
-      const [start, deleteCount, ...adds] = args as [number, number, ...OpaqueRecordInstance[]];
+      const [start, _deleteCount, ...adds] = args as [number, number | undefined, ...OpaqueRecordInstance[]];
+
+      // Don't know if I like this approach, is there not a way where we can just use splice, see what it deleted and go from there?
+      let deleteCount;
+      if (args.length === 1) {
+        // Omitting deleteCount: remove ALL elements (a.k.a. Infinity)
+        deleteCount = Infinity;
+      } else {
+        // deleteCount is undefined, not a valid number, a negative number...
+        if (typeof _deleteCount !== 'number' || _deleteCount < 0) {
+          // do not remove any elements
+          deleteCount = 0;
+        } else {
+          deleteCount = _deleteCount;
+        }
+      }
+
+      // sanitize deleteCount to not exceed length / amount of items from index to end
+      deleteCount = Math.min(collection[Context].source.length - start, deleteCount);
 
       // detect a full replace
       if (start === 0 && deleteCount === collection[Context].source.length) {

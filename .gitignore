@@ -6,6 +6,7 @@
 concat-stats-for
 dist
 dist-*
+cjs-dist
 tmp
 unstable-preview-types
 packages/*/addon
@@ -71,7 +72,10 @@ docs-viewer/docs.warp-drive.io/.vitepress/cache
 docs-viewer/docs.warp-drive.io/guides
 docs-viewer/docs.warp-drive.io/api
 docs-viewer/docs.warp-drive.io/public/logos
-packages/*/logos
-warp-drive-packages/*/logos
 
 vite.config.mjs.timestamp-*
+
+node-compile-cache
+
+# Claude Code local files
+.claude/*.local.*

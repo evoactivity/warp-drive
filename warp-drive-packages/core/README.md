@@ -1,64 +1,48 @@
-<h1 align="center">
+<p align="center">
   <img
-    class="project-logo light-only"
-    src="./logos/github-header.svg#gh-light-mode-only"
-    alt="WarpDrive | Boldly go where no app has gone before"
-    title="WarpDrive | Boldly go where no app has gone before"
+    class="project-logo"
+    src="./logos/logo-yellow-slab.svg"
+    alt="WarpDrive"
+    width="180px"
+    title="WarpDrive"
     />
-  <img
-    class="project-logo dark-only"
-    src="./logos/github-header.svg#gh-dark-mode-only"
-    alt="WarpDrive | Boldly go where no app has gone before"
-    title="WarpDrive | Boldly go where no app has gone before"
-    />
-</h1>
+</p>
 
-![NPM Stable Version](https://img.shields.io/npm/v/ember-data/latest?label=version&style=flat&color=FFC474)
-![NPM Downloads](https://img.shields.io/npm/dm/ember-data.svg?style=flat&color=FFC474)
-![License](https://img.shields.io/github/license/warp-drive-data/warp-drive.svg?style=flat&color=FFC474)
-[![Docs](./logos/docs-badge.svg)](https://api.emberjs.com/ember-data/release)
-[![EmberJS Discord Community Server](https://img.shields.io/badge/EmberJS-grey?logo=discord&logoColor=FFC474)](https://discord.gg/zT3asNS
+![NPM Stable Version](https://img.shields.io/npm/v/ember-data/latest?label=version&style=flat&color=fdb155)
+![NPM Downloads](https://img.shields.io/npm/dm/ember-data.svg?style=flat&color=fdb155)
+![License](https://img.shields.io/github/license/warp-drive-data/warp-drive.svg?style=flat&color=fdb155)
+[![EmberJS Discord Community Server](https://img.shields.io/badge/EmberJS-grey?logo=discord&logoColor=fdb155)](https://discord.gg/zT3asNS
 )
-[![WarpDrive Discord Server](https://img.shields.io/badge/WarpDrive-grey?logo=discord&logoColor=FFC474)](https://discord.gg/PHBbnWJx5S
+[![WarpDrive Discord Server](https://img.shields.io/badge/WarpDrive-grey?logo=discord&logoColor=fdb155)](https://discord.gg/PHBbnWJx5S
 )
-
 
 <p align="center">
   <br>
-  <a href="https://warp-drive.io">WarpDrive</a> is a lightweight data library for web apps &mdash;
+  <a href="https://warp-drive.io">WarpDrive</a> is the lightweight data library for web apps &mdash;
   <br>
   universal, typed, reactive, and ready to scale.
-  <br>
-  <br>
+  <br/><br/>
 </p>
 
-WarpDrive provides features that make it easy to build scalable, fast, feature
-rich application &mdash; letting you ship better experiences more quickly without re-architecting your app or API. WarpDrive is:
+***Warp*Drive** makes it easy to build scalable, fast, feature
+rich applications &mdash; letting you ship better experiences more quickly without re-architecting your app or API. ***Warp*Drive** is:
 
+- 🌌 Seamless Reactivity in any Framework
 - ⚡️ Committed to Best-In-Class Performance
-- 🌲 Focused on being as svelte as possible
-- 🚀 SSR Ready
 - 💚 Typed
-- 🔜 works with any framework
-- ⚛️ Supports any API: `GraphQL` `JSON:API` `REST` `tRPC` ...bespoke or a mix
+- ⚛️ Works with any API
+- 🌲 Focused on being as tiny as possible
+- 🚀 SSR Ready
 - 🐹 Built with ♥️ by [Ember](https://emberjs.com)
 
 <br>
 <br>
 
-*Get Started* → [Guides](./guides/index.md)
+*Get Started* → [Guides](https://warp-drive.io/guides/)
 
 <br>
 
 ---
-
-<br>
-
-## Installation
-
-```sh
-pnpm add -E @warp-drive/core@latest
-```
 
 <br>
 

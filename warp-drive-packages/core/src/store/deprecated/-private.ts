@@ -1,5 +1,6 @@
 import { assert } from '@warp-drive/build-config/macros';
 
+import { defineSignal } from '../../signals/-private.ts';
 import { getOrSetGlobal } from '../../types/-private.ts';
 import type { Cache } from '../../types/cache.ts';
 import type { NewResourceKey, ResourceKey } from '../../types/identifier.ts';
@@ -18,7 +19,6 @@ import type {
 import type { SingleResourceDocument } from '../../types/spec/json-api-raw.ts';
 import { ensureStringId, type InstanceCache, recordIdentifierFor } from '../-private';
 import type { NotificationType } from '../-private/managers/notification-manager.ts';
-import { defineSignal } from '../-private/new-core-tmp/reactivity/signal.ts';
 import type { Store } from './store.ts';
 
 /*
@@ -132,7 +132,7 @@ export type KeyOrString<T> = keyof T & string extends never ? string : keyof T &
  * "model" class.
  *
  * Only used when using the legacy schema-service implementation
- * for @ember-data/model or when wrapping schema for legacy
+ * for @warp-drive/legacy/model or when wrapping schema for legacy
  * Adapters/Serializers.
  *
  */
@@ -273,7 +273,7 @@ export class RecordReference {
     normalized hash of data and the object represented by the reference
     will update.
 
-    If you pass a promise to `push`, Ember Data will not ask the adapter
+    If you pass a promise to `push`, WarpDrive will not ask the adapter
     for the data if another attempt to fetch it is made in the
     interim. When the promise resolves, the underlying object is updated
     with the new data, and the promise returned by *this function* is resolved
@@ -406,7 +406,7 @@ export function getShimClass<T>(
   return shim;
 }
 
-// Mimics the static apis of @ember-data/model
+// Mimics the static apis of @warp-drive/legacy/model
 export class ShimModelClass<T = unknown> implements ModelSchema<T> {
   declare __store: Store;
   declare modelName: T extends TypedRecordInstance ? TypeFromInstance<T> : string;

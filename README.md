@@ -3,7 +3,7 @@
     class="project-logo"
     src="./logos/synced/logo-yellow-slab.svg"
     alt="WarpDrive"
-    width="120px"
+    width="180px"
     title="WarpDrive"
     />
 </p>
@@ -18,14 +18,14 @@
 
 <p align="center">
   <br>
-  <a href="https://warp-drive.io">WarpDrive</a>  (formerly EmberData) is the lightweight data library for web apps &mdash;
+  <a href="https://warp-drive.io">WarpDrive</a> is the lightweight data library for web apps &mdash;
   <br>
   universal, typed, reactive, and ready to scale.
   <br/><br/>
 </p>
 
-***Warp*Drive** provides features that make it easy to build scalable, fast, feature
-rich application &mdash; letting you ship better experiences more quickly without re-architecting your app or API. WarpDrive is:
+***Warp*Drive** makes it easy to build scalable, fast, feature
+rich applications &mdash; letting you ship better experiences more quickly without re-architecting your app or API. ***Warp*Drive** is:
 
 - 🌌 Seamless Reactivity in any Framework
 - ⚡️ Committed to Best-In-Class Performance

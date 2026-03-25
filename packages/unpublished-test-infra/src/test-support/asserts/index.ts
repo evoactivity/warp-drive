@@ -1,11 +1,8 @@
-import { TestContext } from '@ember/test-helpers';
+import type { ResourceKey } from '@warp-drive/core/types';
+import type { Diagnostic, Hooks } from '@warp-drive/diagnostic/-types';
 
-import type { ResourceKey } from '@warp-drive/core-types';
-import type { Diagnostic } from '@warp-drive/diagnostic/-types';
-
-import type Assert from 'ember-data-qunit-asserts';
-import type { CacheOperation, NotificationType } from '@ember-data/store';
-import type { RequestKey } from '@warp-drive/core-types/identifier';
+import type { CacheOperation, NotificationType } from '@warp-drive/core';
+import type { RequestKey } from '@warp-drive/core/types/identifier';
 
 import { configureAssertAllDeprecations } from './assert-all-deprecations';
 import { configureAssertionHandler } from './assert-assertion';
@@ -13,9 +10,17 @@ import { configureBetterAsserts } from './assert-better';
 import { configureDeprecationHandler, DeprecationConfig, FoundDeprecation } from './assert-deprecation';
 import { configureNotificationsAssert } from './assert-notification';
 import { configureWarningHandler, WarningConfig } from './assert-warning';
+import type { RenderingTestContext } from '@warp-drive/diagnostic/ember';
 
-declare module '@warp-drive/diagnostic' {
-  export interface EmberDiagnostic extends Diagnostic {
+declare module '@warp-drive/diagnostic/-types' {
+  export interface Diagnostic {
+    /**
+     * Compat with QUnit assert interface
+     */
+    test: {
+      expected: number;
+    };
+
     expectDeprecation(options: DeprecationConfig, label?: string): void;
     expectDeprecation(
       callback: () => void | Promise<void>,
@@ -32,6 +37,7 @@ declare module '@warp-drive/diagnostic' {
     expectAssertion(callback: () => unknown, matcher: string | RegExp): Promise<void>;
     expectNoAssertion(callback: () => unknown): Promise<void>;
     watchNotifications(store?: unknown): void;
+
     /**
      * Asserts that each member of actual strictly matches the corresponding member of expected.
      * Asserts that actual is an array and has the same length as expected.
@@ -54,53 +60,41 @@ declare module '@warp-drive/diagnostic' {
 
     clearNotifications(): void;
   }
-
-  export interface EmberHooks<TC extends TestContext> {
-    onSuiteStart: (cb: () => void | Promise<void>) => void;
-    onSuiteFinish: (cb: () => void | Promise<void>) => void;
-    beforeModule: (cb: () => void | Promise<void>) => void;
-    afterModule: (cb: () => void | Promise<void>) => void;
-    beforeEach: (cb: (this: TC, assert: EmberDiagnostic) => void | Promise<void>) => void;
-    afterEach: (cb: (this: TC, assert: EmberDiagnostic) => void | Promise<void>) => void;
-  }
-
-  export function module<TC extends TestContext>(
-    name: string,
-    callback: (hooks: EmberHooks<TC>) => void | Promise<void>
-  ): void;
-
-  export function skip<TC extends TestContext>(
-    name: string,
-    callback: (this: TC, assert: EmberDiagnostic) => void | Promise<void>
-  ): void;
-
-  export function todo<TC extends TestContext>(
-    name: string,
-    callback: (this: TC, assert: EmberDiagnostic) => void | Promise<void>
-  ): void;
-
-  export function test<TC extends TestContext>(
-    name: string,
-    callback: (this: TC, assert: EmberDiagnostic) => void | Promise<void>
-  ): void;
 }
-
-type CompatAssert = Assert & {
-  test: {
-    expected: number;
-  };
-};
 
 export interface ExpandedHooks {
   onSuiteStart: (cb: () => void | Promise<void>) => void;
   onSuiteFinish: (cb: () => void | Promise<void>) => void;
   beforeModule: (cb: () => void | Promise<void>) => void;
   afterModule: (cb: () => void | Promise<void>) => void;
-  beforeEach: (cb: (assert: CompatAssert) => void | Promise<void>) => void;
-  afterEach: (cb: (assert: CompatAssert) => void | Promise<void>) => void;
+  beforeEach: (cb: (assert: Diagnostic) => void | Promise<void>) => void;
+  afterEach: (cb: (assert: Diagnostic) => void | Promise<void>) => void;
 }
 
-function upgradeHooks(hooks: NestedHooks): ExpandedHooks {
+interface NestedHooks {
+  /**
+   * Runs after the last test. If additional tests are defined after the
+   * module's queue has emptied, it will not run this hook again.
+   */
+  after(fn: (assert: Assert) => void | Promise<void>): void;
+
+  /**
+   * Runs after each test.
+   */
+  afterEach(fn: (assert: Assert) => void | Promise<void>): void;
+
+  /**
+   * Runs before the first test.
+   */
+  before(fn: (assert: Assert) => void | Promise<void>): void;
+
+  /**
+   * Runs before each test.
+   */
+  beforeEach(fn: (assert: Assert) => void | Promise<void>): void;
+}
+
+function upgradeHooks(hooks: Hooks | NestedHooks): ExpandedHooks {
   const upgraded = hooks as unknown as ExpandedHooks;
   // eslint-disable-next-line no-restricted-globals
   const Framework = typeof QUnit !== 'undefined' ? QUnit : null;
@@ -110,22 +104,27 @@ function upgradeHooks(hooks: NestedHooks): ExpandedHooks {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     upgraded.onSuiteFinish = Framework.done;
     // eslint-disable-next-line @typescript-eslint/unbound-method
-    upgraded.beforeModule = hooks.before;
+    upgraded.beforeModule = (hooks as NestedHooks).before;
     // eslint-disable-next-line @typescript-eslint/unbound-method
-    upgraded.afterModule = hooks.after;
+    upgraded.afterModule = (hooks as NestedHooks).after;
   }
   return upgraded;
 }
 
-export default function configureAsserts(hooks: NestedHooks): void {
+export default function configureAsserts(
+  hooks: Hooks | NestedHooks,
+  options?: { assertAllDeprecations: boolean }
+): void {
   const upgraded = upgradeHooks(hooks);
 
-  upgraded.beforeEach(function (this: TestContext, assert) {
+  upgraded.beforeEach(function (this: RenderingTestContext, assert) {
     configureAssertionHandler(assert);
     configureDeprecationHandler(assert);
     configureWarningHandler(assert);
     configureBetterAsserts(assert);
     configureNotificationsAssert.call(this, assert);
   });
-  configureAssertAllDeprecations(upgraded);
+  if (options?.assertAllDeprecations ?? true) {
+    configureAssertAllDeprecations(upgraded);
+  }
 }

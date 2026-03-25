@@ -1,7 +1,7 @@
 import { DEPRECATE_COMPUTED_CHAINS } from '@warp-drive/core/build-config/deprecations';
 import { assert } from '@warp-drive/core/build-config/macros';
+import { defineSignal, memoized } from '@warp-drive/core/signals/-leaked';
 import type { RelatedCollection as ManyArray } from '@warp-drive/core/store/-private';
-import { defineSignal, memoized } from '@warp-drive/core/store/-private';
 import type { BaseFinderOptions } from '@warp-drive/core/types';
 import type { Links } from '@warp-drive/core/types/spec/json-api-raw';
 
@@ -30,7 +30,6 @@ export interface PromiseManyArray<T> {
   const comments = await post.comments;
   ```
 
-  @class PromiseManyArray
   @public
 */
 export class PromiseManyArray<T = unknown> {
@@ -46,7 +45,6 @@ export class PromiseManyArray<T = unknown> {
 
   /**
    * Retrieve the length of the content
-   * @property length
    * @public
    */
   @memoized
@@ -91,8 +89,6 @@ export class PromiseManyArray<T = unknown> {
   /**
    * Reload the relationship
    * @public
-   * @param options
-   * @return
    */
   reload(options: Omit<BaseFinderOptions, ''>): this {
     assert('You are trying to reload an async manyArray before it has been created', this.content);
@@ -105,32 +101,24 @@ export class PromiseManyArray<T = unknown> {
   /**
    * Whether the loading promise is still pending
    *
-   * @property isPending
-   * @type {Boolean}
    * @public
    */
   declare isPending: boolean;
   /**
    * Whether the loading promise rejected
    *
-   * @property isRejected
-   * @type {Boolean}
    * @public
    */
   declare isRejected: boolean;
   /**
    * Whether the loading promise succeeded
    *
-   * @property isFulfilled
-   * @type {Boolean}
    * @public
    */
   declare isFulfilled: boolean;
   /**
    * Whether the loading promise completed (resolved or rejected)
    *
-   * @property isSettled
-   * @type {Boolean}
    * @public
    */
   declare isSettled: boolean;
@@ -150,8 +138,6 @@ export class PromiseManyArray<T = unknown> {
   /**
    * catch errors thrown by this promise
    * @public
-   * @param callback
-   * @return {Promise}
    */
   catch(cb: Parameters<Promise<ManyArray<T>>['catch']>[0]): Promise<unknown> {
     return this.promise!.catch(cb);
@@ -161,8 +147,6 @@ export class PromiseManyArray<T = unknown> {
    * run cleanup after this promise completes
    *
    * @public
-   * @param callback
-   * @return {Promise}
    */
   finally(cb: Parameters<Promise<ManyArray<T>>['finally']>[0]): Promise<unknown> {
     return this.promise!.finally(cb);
@@ -180,7 +164,6 @@ export class PromiseManyArray<T = unknown> {
 
   /**
    * Retrieve the links for this relationship
-   * @property links
    * @public
    */
   @memoized
@@ -190,7 +173,6 @@ export class PromiseManyArray<T = unknown> {
 
   /**
    * Retrieve the meta for this relationship
-   * @property meta
    * @public
    */
   @memoized

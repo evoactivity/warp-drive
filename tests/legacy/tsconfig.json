@@ -1,8 +1,5 @@
 {
-  "include": ["tests/app/**/*", "config/**/*", "tests/**/*", "../../@types/ember-data-qunit-asserts"],
-  "glint": {
-    "environment": ["ember-loose", "ember-template-imports"]
-  },
+  "include": ["tests/**/*"],
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "module": "esnext",
@@ -24,7 +21,12 @@
     "experimentalDecorators": true,
     "incremental": true,
     "declaration": true,
-    "types": ["ember-source/types", "vite/client"],
+    "types": [
+      "@glint/ember-tsc/types",
+      "ember-source/types",
+      "vite/client",
+      "@ember-data/unpublished-test-infra/test-support/asserts/index"
+    ],
     "paths": {
       "@warp-drive/holodeck": ["../../packages/holodeck/declarations"],
       "@warp-drive/holodeck/*": ["../../packages/holodeck/declarations/*"],
@@ -36,10 +38,12 @@
       "@warp-drive/core/*": ["../../warp-drive-packages/core/declarations/*"],
       "@warp-drive/utilities": ["../../warp-drive-packages/utilities/declarations"],
       "@warp-drive/utilities/*": ["../../warp-drive-packages/utilities/declarations/*"],
-      "@warp-drive/diagnostic": ["../../warp-drive-packages/diagnostic/declarations"],
-      "@warp-drive/diagnostic/*": ["../../warp-drive-packages/diagnostic/declarations/*"],
+      "@warp-drive/diagnostic": ["../../packages/diagnostic/declarations"],
+      "@warp-drive/diagnostic/*": ["../../packages/diagnostic/declarations/*"],
       "@warp-drive/json-api": ["../../warp-drive-packages/json-api/declarations"],
-      "@warp-drive/json-api/*": ["../../warp-drive-packages/json-api/declarations/*"]
+      "@warp-drive/json-api/*": ["../../warp-drive-packages/json-api/declarations/*"],
+      "@ember-data/unpublished-test-infra": ["../../packages/unpublished-test-infra/unstable-preview-types"],
+      "@ember-data/unpublished-test-infra/*": ["../../packages/unpublished-test-infra/unstable-preview-types/*"]
     },
     "allowImportingTsExtensions": true,
     "composite": true,
@@ -73,6 +77,9 @@
     },
     {
       "path": "../../warp-drive-packages/json-api"
+    },
+    {
+      "path": "../../packages/unpublished-test-infra"
     }
   ]
 }

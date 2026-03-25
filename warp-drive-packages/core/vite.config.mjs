@@ -39,6 +39,7 @@ export const entryPoints = [
   './src/store.ts',
   './src/store/-private.ts',
   './src/configure.ts',
+  './src/signals/-leaked.ts',
 
   // graph
   './src/graph/-private.ts',
@@ -61,6 +62,7 @@ export default createConfig(
   {
     entryPoints,
     externals,
+    compileTypes: process.env.IS_UNPKG_BUILD !== 'true',
   },
   import.meta.resolve
 );

@@ -3,8 +3,8 @@ import { DEBUG } from '@warp-drive/build-config/env';
 import { assert } from '@warp-drive/core/build-config/macros';
 
 import type { Store } from '../../../index.ts';
-import type { WarpDriveSignal } from '../../../store/-private.ts';
-import { ARRAY_SIGNAL, consumeInternalSignal, entangleSignal, withSignalStore } from '../../../store/-private.ts';
+import type { WarpDriveSignal } from '../../../signals/-private.ts';
+import { ARRAY_SIGNAL, consumeInternalSignal, entangleSignal, withSignalStore } from '../../../signals/-private.ts';
 import type { ResourceKey } from '../../../types/identifier.ts';
 import type { ArrayValue, ObjectValue, Value } from '../../../types/json/raw.ts';
 import type { OpaqueRecordInstance } from '../../../types/record.ts';
@@ -342,7 +342,7 @@ export class ManagedArray {
             fn = function () {
               if (!IS_EDITABLE) {
                 throw new Error(
-                  `Mutating this array via ${String(prop)} is not allowed because the record is not editable`
+                  `Mutating this array via ${String(prop)} is not allowed because the ReactiveResource is not editable`
                 );
               }
               consumeInternalSignal(_SIGNAL);
@@ -376,7 +376,8 @@ export class ManagedArray {
           if (context.path) {
             errorPath = context.path[context.path.length - 1];
           }
-          throw new Error(`Cannot set ${String(prop)} on ${errorPath} because the record is not editable`);
+          assert(`Cannot set ${String(prop)} on ${errorPath} because the ReactiveResource is not editable`);
+          return false;
         }
         if (prop === 'identifier') {
           self.identifier = value as ResourceKey;

@@ -632,7 +632,7 @@ export interface SchemaObjectField {
      * Configures which extensions this object should use.
      *
      * Extensions are registered with the store's schema service
-     * via {@link SchemaService.registerDangerousObjectExtension}
+     * via {@link SchemaService.CAUTION_MEGA_DANGER_ZONE_registerExtension}
      *
      * Extensions should only be used for temporary enhancements
      * to objects to support migrating away from deprecated patterns
@@ -875,7 +875,7 @@ export interface SchemaArrayField {
      * Configures which extensions this object should use.
      *
      * Extensions are registered with the store's schema service
-     * via {@link SchemaService.registerDangerousObjectExtension}
+     * via {@link SchemaService.CAUTION_MEGA_DANGER_ZONE_registerExtension}
      *
      * Extensions should only be used for temporary enhancements
      * to objects to support migrating away from deprecated patterns
@@ -1584,7 +1584,7 @@ export interface LinksModeBelongsToField {
 
     /**
      * Whether this field should ever make use of the legacy support infra
-     * from @ember-data/model and the LegacyNetworkMiddleware for adapters and serializers.
+     * from @warp-drive/legacy/model and the LegacyNetworkMiddleware for adapters and serializers.
      *
      * MUST be true for PolarisMode + LinksMode
      *
@@ -1768,7 +1768,7 @@ export interface LegacyHasManyField {
 
     /**
      * Whether this field should ever make use of the legacy support infra
-     * from @ember-data/model and the LegacyNetworkMiddleware for adapters and serializers.
+     * from @warp-drive/legacy/model and the LegacyNetworkMiddleware for adapters and serializers.
      *
      * When true, none of the legacy support will be utilized. Sync relationships
      * will be expected to already have all their data. When reloading a sync relationship
@@ -1954,7 +1954,7 @@ export interface LinksModeHasManyField {
 
     /**
      * Whether this field should ever make use of the legacy support infra
-     * from @ember-data/model and the LegacyNetworkMiddleware for adapters and serializers.
+     * from @warp-drive/legacy/model and the LegacyNetworkMiddleware for adapters and serializers.
      *
      * MUST be true for PolarisMode + LinksMode
      *
@@ -2281,7 +2281,7 @@ export interface LegacyResourceSchema {
    * Configures which extensions this resource should use.
    *
    * Extensions are registered with the store's schema service
-   * via {@link SchemaService.registerDangerousObjectExtension}
+   * via {@link SchemaService.CAUTION_MEGA_DANGER_ZONE_registerExtension}
    *
    * Extensions should only be used for temporary enhancements
    * to objects to support migrating away from deprecated patterns
@@ -2354,7 +2354,7 @@ export interface ObjectSchema {
    * Configures which extensions this object should use.
    *
    * Extensions are registered with the store's schema service
-   * via {@link SchemaService.registerDangerousObjectExtension}
+   * via {@link SchemaService.CAUTION_MEGA_DANGER_ZONE_registerExtension}
    *
    * Extensions should only be used for temporary enhancements
    * to objects to support migrating away from deprecated patterns

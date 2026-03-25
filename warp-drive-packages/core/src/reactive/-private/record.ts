@@ -2,17 +2,16 @@ import { DEBUG } from '@warp-drive/core/build-config/env';
 import { assert } from '@warp-drive/core/build-config/macros';
 
 import type { NotificationType } from '../../index.ts';
-import type { LegacyManyArray, Store } from '../../store/-private.ts';
 import {
   ARRAY_SIGNAL,
   entangleSignal,
   notifyInternalSignal,
   OBJECT_SIGNAL,
-  recordIdentifierFor,
-  setRecordIdentifier,
   Signals,
   withSignalStore,
-} from '../../store/-private.ts';
+} from '../../signals/-private.ts';
+import type { LegacyManyArray, Store } from '../../store/-private.ts';
+import { recordIdentifierFor, setRecordIdentifier } from '../../store/-private.ts';
 import { removeRecordIdentifier } from '../../store/-private/caches/instance-cache.ts';
 import type { ResourceKey } from '../../types/identifier.ts';
 import { STRUCTURED } from '../../types/request.ts';
@@ -528,7 +527,7 @@ export class ReactiveResource {
 
         if (!context.editable) {
           assert(
-            `Cannot set ${String(prop)} on ${context.path !== null ? context.value : resourceKey.type} because the record is not editable`
+            `Cannot set ${String(prop)} on ${context.path !== null ? context.value : resourceKey.type} because the ReactiveResource is not editable`
           );
           return false;
         }

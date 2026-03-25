@@ -1,8 +1,8 @@
 import chalk from 'chalk';
-import { CHANNEL, npmDistTagForChannelAndVersion, VALID_TRAINS } from '../../../utils/channel';
+import { CHANNEL, npmDistTagForChannelAndVersion, VALID_TRAINS } from '../../../utils/channel.ts';
 
-import { APPLIED_STRATEGY, Package, STRATEGY } from '../../../utils/package';
-import { getNextVersion } from '../../utils/next-version';
+import { APPLIED_STRATEGY, Package, STRATEGY } from '../../../utils/package.ts';
+import { getNextVersion } from '../../utils/next-version.ts';
 import path from 'path';
 import semver from 'semver';
 
@@ -102,6 +102,8 @@ export async function applyStrategy(
     applied_strategy.pkgDir = getPkgDir(pkg.filePath);
     applied_strategy.fromVersion = fromPkg ? fromPkg.pkgData.version : pkg.pkgData.version;
     applied_strategy.new = !fromPkg;
+    applied_strategy.unpkgPublish =
+      !applied_strategy.private && (rule.unpkgPublish ?? strategy.defaults.unpkgPublish ?? false);
     applied_strategy.mirrorPublish =
       !applied_strategy.private && (rule.mirrorPublish ?? strategy.defaults.mirrorPublish ?? false);
     applied_strategy.typesPublish =
