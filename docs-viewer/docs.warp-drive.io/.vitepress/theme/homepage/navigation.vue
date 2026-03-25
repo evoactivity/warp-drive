@@ -28,7 +28,7 @@ import word from "./word.svg";
   max-width: 1344px;
   padding: 0;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 10;
 
   @media (min-width: 980px) {
     padding: 0 2rem;
@@ -49,6 +49,10 @@ import word from "./word.svg";
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+
+  @media (min-width: 540px) {
+    gap: 2rem;
+  }
 
   &::before {
     content: "";
@@ -78,7 +82,7 @@ import word from "./word.svg";
   }
 
   ul {
-    display: none;
+    display: flex;
     justify-content: center;
     list-style: none;
     margin: 0;
