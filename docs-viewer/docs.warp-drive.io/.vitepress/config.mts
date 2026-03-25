@@ -135,18 +135,16 @@ export default withPwa(
       ['meta', { property: 'og:image', content: '/logos/warp-drive/github-header.png' }],
       // ['meta', { property: 'og:image', content: '/logos/social1.png' }],
       // ['meta', { property: 'og:image', content: '/logos/social2.png' }],
-      // [
-      //   'link',
-      //   { rel: 'preconnect', href: 'https://fonts.googleapis.com' }
-      // ],
-      // [
-      //   'link',
-      //   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
-      // ],
-      // [
-      //   'link',
-      //   { href: 'https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&amp;display=swap', rel: 'stylesheet' }
-      // ]
+      ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+      ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+      [
+        'link',
+        { href: 'https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&amp;display=swap', rel: 'stylesheet' },
+      ],
+      [
+        'link',
+        { href: 'https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&amp;display=swap', rel: 'stylesheet' },
+      ],
     ],
 
     // github pages supports cleanURLs
