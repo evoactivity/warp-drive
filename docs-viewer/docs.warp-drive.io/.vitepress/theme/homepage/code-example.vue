@@ -56,6 +56,8 @@ export default class MyComponent extends Component {
   ],
   react: [
     {
+      title: "Create your store",
+      description: "Create a recommended store instance for your application.",
       code: `import { StoreProvider } from '@warp-drive/react';
 import { Store } from './store.ts';
 import { UserList } from './user-list.tsx';
@@ -73,6 +75,8 @@ export function App(props) {
     },
 
     {
+      title: "Create a request",
+      description: "Create a request using WarpDrive's request utilities.",
       code: `import { Request } from '@warp-drive/react';
 import { listUsers } from './api.ts';
 
@@ -135,7 +139,7 @@ function changeFramework(framework: keyof typeof steps) {
       lang="glimmer-ts"
       theme="aurora-x"
       :highlighter="highlighter"
-      :code="code"
+      :code="code.code"
       :options="{ duration: 800, stagger: 0.3, lineNumbers: true }"
     />
     <button @click="animate">Animate</button>
@@ -147,3 +151,15 @@ function changeFramework(framework: keyof typeof steps) {
     </select>
   </div>
 </template>
+
+<style scoped>
+.code-example {
+  margin: 0 auto;
+  max-width: 1344px;
+  padding: 3rem 2rem;
+
+  @media (min-width: 980px) {
+    padding: 5rem 4rem;
+  }
+}
+</style>

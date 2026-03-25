@@ -79,13 +79,13 @@ onUnmounted(() => {
 
 .hero {
   display: block;
-  color: #ffc474;
-  text-align: left;
-  max-width: 1344px;
-  margin: 0 auto;
-  padding: 8rem 2rem;
   font-family:
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #ffc474;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 1344px;
+  padding: 8rem 2rem;
 
   @media (min-width: 980px) {
     padding: 11rem 4rem;
