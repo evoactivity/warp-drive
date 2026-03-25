@@ -354,7 +354,8 @@ onUnmounted(() => {
     min-height: 0;
 
     @media (min-width: 980px) {
-      min-height: 80vh;
+      min-height: 0;
+      height: calc(-28rem + 100vh);
     }
   }
 
