@@ -130,13 +130,11 @@ onUnmounted(() => {
 
   .core-team .VPTeamMembersItem {
     background: #0b0411;
-    border: 1px solid rgb(234 150 255 / 15%);
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
 
     &:hover {
-      border-color: rgb(234 150 255 / 30%);
       box-shadow: 0 0 40px -20px rgb(228 45 55 / 30%);
     }
   }
@@ -229,7 +227,6 @@ onUnmounted(() => {
   /* Hall of Fame - avatar, name, and links only */
   .hall-of-fame .VPTeamMembersItem {
     background: #0b0411;
-    border: 1px solid rgb(234 150 255 / 15%);
   }
 
   .hall-of-fame .VPTeamMembersItem .name {

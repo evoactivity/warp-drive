@@ -145,8 +145,8 @@ import word from "./word.svg";
     flex: 0;
 
     &:deep(.DocSearch-Button) {
-      height: 42px;
-      background-color: var(--vp-c-bg-alt);
+      height: 36px;
+      background-color: #0c0a0e;
       border-radius: 20rem;
     }
   }
