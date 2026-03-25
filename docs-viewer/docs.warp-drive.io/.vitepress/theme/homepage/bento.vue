@@ -309,7 +309,7 @@ import Starfield from "./starfield.vue";
     <div class="e box workload">
       <h2>Reduce the Workload</h2>
       <p>
-        Why make the same requests across tabs and windows? WarpDrive will make a request once and share it between all
+        Why make the same requests across tabs and windows? WarpDrive can make a request once and share it between all
         instances of your app.
       </p>
       <img src="./workload.png" width="415" height="740" alt="" />

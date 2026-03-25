@@ -28,11 +28,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="background-container">
-    <Starfield :speed="starSpeed" :trail-length="trailLength" :enable-scroll-speed="false" :max-fps="60" />
-    <Bubble :speed="1" :max-fps="60" />
-  </div>
-  <div class="hero">
+  <section class="hero">
+    <div class="background-container">
+      <Starfield :speed="starSpeed" :trail-length="trailLength" :enable-scroll-speed="false" :max-fps="60" />
+      <Bubble :speed="1" :max-fps="60" />
+    </div>
     <div class="content">
       <h1>{{ frontmatter.hero.text }}</h1>
       <p v-html="frontmatter.hero.tagline"></p>
@@ -50,7 +50,7 @@ onUnmounted(() => {
         </li>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

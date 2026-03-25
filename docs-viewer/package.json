@@ -25,6 +25,8 @@
     "debug": "4.4.1",
     "fontfaceobserver-es": "^3.3.3",
     "front-matter": "^4.0.2",
+    "shiki": "^3.19.0",
+    "shiki-magic-move": "^1.2.1",
     "twgl.js": "^7.0.0",
     "typedoc": "^0.28.10",
     "typedoc-plugin-markdown": "^4.8.1",

@@ -5,7 +5,7 @@ import word from "./word.svg";
 </script>
 
 <template>
-  <div class="container">
+  <header class="container">
     <nav class="navigation">
       <a href="/" class="logo-mark">
         <logo class="logo" />
@@ -18,7 +18,7 @@ import word from "./word.svg";
       </ul>
       <div class="search"><VPNavBarSearch /></div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <style scoped lang="postcss">

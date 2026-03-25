@@ -9,6 +9,7 @@ import ContributorList from "../../theme/ContributorList.vue";
 import Hero from "./hero.vue";
 import Navigation from "./navigation.vue";
 import Bento from "./bento.vue";
+import CodeExample from "./code-example.vue";
 
 // So we can alter the fallback fonts to reduce layout shifts
 const cantarell = new FontFaceObserver("Cantarell");
@@ -31,6 +32,9 @@ onUnmounted(() => {
   <Navigation />
   <Hero />
   <Bento />
+  <Suspense>
+    <CodeExample />
+  </Suspense>
 
   <VPTeamPage>
     <VPTeamPageTitle>
